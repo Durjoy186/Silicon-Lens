@@ -1,0 +1,170 @@
+{
+  "arduino_uno": [
+    {
+      "id": "tour_power_subsystem",
+      "title_en": "1. Power Regulation & Protection Subsystem",
+      "title_bn": "১. পাওয়ার রেগুলেশন ও সুরক্ষা সাবসিস্টেম",
+      "summary_en": "Learn how raw 7V-12V power is stepped down to safe 5V and 3.3V for delicate circuits.",
+      "summary_bn": "কীভাবে ৭-১২ ভোল্টের ডিসি বিদ্যুৎকে নিরাপদ ৫ ভোল্ট এবং ৩.৩ ভোল্টে রূপান্তর করা হয় তা জানুন।",
+      "steps": [
+        {
+          "target_mesh": "Comp_DC_BarrelJack",
+          "title_en": "External DC Barrel Jack",
+          "title_bn": "বাহ্যিক ডিসি ব্যারেল জ্যাক",
+          "description_en": "Accepts 7V to 12V from batteries or wall adapters. Connected to a reverse-polarity protection diode.",
+          "description_bn": "ব্যাটারি বা ১২ ভোল্ট অ্যাডাপ্টার থেকে পাওয়ার গ্রহণ করে। এতে একটি রিভার্স-পোলারিটি প্রটেকশন ডায়োড রয়েছে।",
+          "camera_pos": [-3.5, 2.5, 2.5],
+          "camera_look": [-1.9, 0.4, 1.4]
+        },
+        {
+          "target_mesh": "Comp_Regulator5V",
+          "title_en": "AMS1117 5V Voltage Regulator",
+          "title_bn": "AMS1117 ৫ ভোল্ট ভোল্টেজ রেগুলেটর",
+          "description_en": "Converts excess voltage to thermal dissipation, providing a rock-solid 5.0V output rail to the board.",
+          "description_bn": "অতিরিক্ত ভোল্টেজকে তাপ আকারে ছড়িয়ে দিয়ে বোর্ডের জন্য স্থিতিশীল ৫.০ ভোল্ট পাওয়ার রেল প্রস্তুত করে।",
+          "camera_pos": [-2.0, 2.0, 1.5],
+          "camera_look": [-1.1, 0.4, 0.8]
+        },
+        {
+          "target_mesh": "Pin_5V",
+          "title_en": "5V Distribution Header",
+          "title_bn": "৫ ভোল্ট পাওয়ার ডিস্ট্রিবিউশন পিন",
+          "description_en": "The regulated 5V emerges here, ready to power external sensors and modules on your breadboard.",
+          "description_bn": "রেগুলেটেড ৫ ভোল্ট এই পিনে পাওয়া যায়, যা ব্রেডবোর্ডের সেন্সর ও আইসিগুলোতে বিদ্যুৎ সরবরাহ করে।",
+          "camera_pos": [-1.2, 2.0, 3.0],
+          "camera_look": [-0.6, 0.4, 2.1]
+        }
+      ]
+    },
+    {
+      "id": "tour_pwm_robotics",
+      "title_en": "2. Pulse-Width Modulation (PWM) & Actuators",
+      "title_bn": "২. পালস-উইডথ মড্যুলেশন (PWM) ও অ্যাকচুয়েটর",
+      "summary_en": "Understand the ~ pins that simulate analog voltage to control DC motor speed and servo angles.",
+      "summary_bn": "যে পিনগুলোতে ~ চিহ্ন রয়েছে সেগুলো অ্যানালগ ভোল্টেজ সিমুলেট করে মোটরের গতি বা সার্ভোর অ্যাঙ্গেল নিয়ন্ত্রণ করে।",
+      "steps": [
+        {
+          "target_mesh": "Pin_D3",
+          "title_en": "Digital Pin 3 (PWM ~)",
+          "title_bn": "ডিজিটাল পিন ৩ (PWM ~)",
+          "description_en": "490 Hz PWM output powered by Timer2. Also serves as external hardware Interrupt 1 (INT1).",
+          "description_bn": "টাইমার-২ চালিত ৪৯০ হার্টজ পিডব্লিউএম আউটপুট এবং এক্সটারনাল ইন্টারাপ্ট ১ (INT1) পিন।",
+          "camera_pos": [-1.0, 1.8, -3.0],
+          "camera_look": [-0.5, 0.4, -2.1]
+        },
+        {
+          "target_mesh": "Pin_D9",
+          "title_en": "Digital Pin 9 (PWM ~)",
+          "title_bn": "ডিজিটাল পিন ৯ (PWM ~)",
+          "description_en": "16-bit Timer1 PWM output. Standard pin for driving SG90 robotic arm gripper servos.",
+          "description_bn": "১৬-বিট টাইমার-১ পিডব্লিউএম আউটপুট। রোবোটিক আর্মের সার্ভো ড্রাইভ করার জন্য আদর্শ পিন।",
+          "camera_pos": [0.6, 1.8, -3.0],
+          "camera_look": [0.6, 0.4, -2.1]
+        },
+        {
+          "target_mesh": "Pin_D11",
+          "title_en": "Digital Pin 11 (PWM ~ / MOSI)",
+          "title_bn": "ডিজিটাল পিন ১১ (PWM ~ / MOSI)",
+          "description_en": "Shares PWM functionality with the high-speed SPI MOSI data line.",
+          "description_bn": "পিডব্লিউএম ফিচারের পাশাপাশি এসপিআই (SPI) বাসের মূল মাস্টার ডেটা আউটপুট হিসেবে কাজ করে।",
+          "camera_pos": [1.2, 1.8, -3.0],
+          "camera_look": [1.0, 0.4, -2.1]
+        }
+      ]
+    }
+  ],
+  "intel_8086": [
+    {
+      "id": "tour_8086_bus_demux",
+      "title_en": "1. The Multiplexed Bus & ALE Strobe",
+      "title_bn": "১. মাল্টিপ্লেক্সড বাস এবং ALE সিগন্যাল",
+      "summary_en": "Trace how the 8086 saves physical pin count by sharing Address and Data pins using the ALE pulse.",
+      "summary_bn": "কীভাবে ৮০৮৬ পিনের সংখ্যা কমাতে একই পিনে অ্যাড্রেস ও ডেটা শেয়ার করে তা পর্যবেক্ষণ করুন।",
+      "steps": [
+        {
+          "target_mesh": "Pin_ALE_31",
+          "title_en": "ALE (Address Latch Enable)",
+          "title_bn": "ALE (অ্যাড্রেস ল্যাচ এনেবল - পিন ৩১)",
+          "description_en": "During T1, the 8086 fires this positive pulse to lock valid address bits into external 74LS373 latches.",
+          "description_bn": "T1 ক্লক সাইকেলে ৮০৮৬ এই পিন দিয়ে পজিটিভ পালস পাঠায় যাতে এক্সটারনাল ল্যাচে মেমরি অ্যাড্রেস জমা থাকে।",
+          "camera_pos": [2.0, 1.5, -2.5],
+          "camera_look": [1.4, 0.2, -1.8]
+        },
+        {
+          "target_mesh": "Pin_AD0_16",
+          "title_en": "AD0 (Pin 16)",
+          "title_bn": "AD0 (পিন ১৬ - অ্যাড্রেস/ডেটা বিট ০)",
+          "description_en": "Transfers Address A0 during T1, and immediately converts to Data Bit D0 during T2-T4.",
+          "description_bn": "T1 সাইকেলে A0 অ্যাড্রেস বিট পাঠায়, এরপর T2-T4 সাইকেলে D0 ডেটা বিট হিসেবে কাজ করে।",
+          "camera_pos": [-1.8, 1.5, 2.5],
+          "camera_look": [-1.2, 0.2, 1.8]
+        }
+      ]
+    },
+    {
+      "id": "tour_8086_xray_architecture",
+      "title_en": "2. Inside the Silicon: BIU vs EU Architecture",
+      "title_bn": "২. চিপের ভেতর: BIU বনাম EU পাইপলাইন",
+      "summary_en": "Explore the internal microarchitecture blocks made visible via X-Ray cutaway.",
+      "summary_bn": "এক্স-রে কাটাওয়ের মাধ্যমে প্রসেসরের অভ্যন্তরীণ আর্কিটেকচারাল ব্লকগুলো পর্যবেক্ষণ করুন।",
+      "steps": [
+        {
+          "target_mesh": "Block_BIU",
+          "title_en": "Bus Interface Unit (BIU)",
+          "title_bn": "বাস ইন্টারফেস ইউনিট (BIU)",
+          "description_en": "Prefetches instruction bytes into a 6-byte FIFO queue and calculates 20-bit physical addresses using CS, DS, SS, ES.",
+          "description_bn": "মেমরি থেকে ৬-বাইট ইন্সট্রাকশন প্রিফেচ করে রাখে এবং সেগমেন্ট রেজিস্টার দিয়ে ২০-বিট মেমরি অ্যাড্রেস গণনা করে।",
+          "camera_pos": [-1.5, 2.5, 1.5],
+          "camera_look": [-0.6, 0.5, 0.0]
+        },
+        {
+          "target_mesh": "Block_EU",
+          "title_en": "Execution Unit (EU)",
+          "title_bn": "এক্সিকিউশন ইউনিট (EU)",
+          "description_en": "Decodes and executes instructions fetched by the BIU. Contains the 16-bit ALU, general registers (AX, BX, CX, DX), and Flags.",
+          "description_bn": "বিআইইউ থেকে নির্দেশিকা নিয়ে ডিকোড করে এবং ১৬-বিট ALU-তে গণনা সম্পন্ন করে। এতে সাধারণ রেজিস্টার ও ফ্ল্যাগ থাকে।",
+          "camera_pos": [1.5, 2.5, 1.5],
+          "camera_look": [0.6, 0.5, 0.0]
+        }
+      ]
+    }
+  ],
+  "robotic_arm": [
+    {
+      "id": "tour_robotic_kinematics",
+      "title_en": "1. 4-DOF Kinematic Linkage & PWM Routing",
+      "title_bn": "১. ৪-ডিএফ কাইনেম্যাটিক লিংক ও পিডব্লিউএম সংযোগ",
+      "summary_en": "See how each servo joint coordinates to create full 3D spatial reach for pick-and-place robotics.",
+      "summary_bn": "কীভাবে প্রতিটি সার্ভো মোটর সমন্বিতভাবে রোবোটিক বাহুর ত্রিমাত্রিক মুভমেন্ট পরিচালনা করে তা দেখুন।",
+      "steps": [
+        {
+          "target_mesh": "Servo_Base_Yaw",
+          "title_en": "Base Yaw Servo (Pin D3)",
+          "title_bn": "বেস রোটেশন সার্ভো (পিন D3)",
+          "description_en": "Provides 180° pan angle across the workbench surface.",
+          "description_bn": "ওয়ার্কবেঞ্চের ওপর ১৮০ ডিগ্রি অনুভূমিক সুইভেল ঘূর্ণন প্রদান করে।",
+          "camera_pos": [0.0, 1.5, 2.0],
+          "camera_look": [0.0, 0.4, 0.0]
+        },
+        {
+          "target_mesh": "Servo_Shoulder_Pitch",
+          "title_en": "Shoulder Elevation Servo (Pin D5)",
+          "title_bn": "শোল্ডার লিফট সার্ভো (পিন D5)",
+          "description_en": "Lifts the heavy cantilever forearm against gravitational torque.",
+          "description_bn": "মাধ্যাকর্ষণ বলের বিপরীতে পুরো বাহুর ভারসাম্য বজায় রেখে উপরে তোলে।",
+          "camera_pos": [1.5, 2.0, 1.5],
+          "camera_look": [0.0, 1.2, 0.2]
+        },
+        {
+          "target_mesh": "Servo_Gripper_Claw",
+          "title_en": "End-Effector Gripper (Pin D9)",
+          "title_bn": "গ্রিপার ক্ল এন্ড-ইফেক্টর (পিন D9)",
+          "description_en": "Laser-cut gear teeth driven by micro-servo for grasping objects.",
+          "description_bn": "বস্তু তুলতে মাইক্রো-সার্ভোর গিয়ার চালিত মেকানিক্যাল গ্রিপার ক্ল।",
+          "camera_pos": [0.0, 3.2, 2.2],
+          "camera_look": [0.0, 2.6, 1.1]
+        }
+      ]
+    }
+  ]
+}

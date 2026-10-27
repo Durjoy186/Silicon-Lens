@@ -1,0 +1,78 @@
+{
+  "arduino_uno": [
+    {
+      "id": "q_uno_1",
+      "question_en": "Click on the digital pin connected to the onboard Amber LED ('L') and used as the SPI SCK clock line.",
+      "question_bn": "অনবোর্ড অ্যাম্বার এলইডি ('L') এবং এসপিআই ক্লক (SCK) হিসেবে ব্যবহৃত ডিজিটাল পিনটিতে ক্লিক করুন।",
+      "hint_en": "Look near the top header, beside the Ground and AREF pins.",
+      "hint_bn": "টপ হেডারে গ্রাউন্ড এবং এরেফ (AREF) পিনের পাশে খুঁজুন।",
+      "correct_mesh": "Pin_D13",
+      "target_name_en": "Digital Pin 13",
+      "target_name_bn": "ডিজিটাল পিন ১৩"
+    },
+    {
+      "id": "q_uno_2",
+      "question_en": "Find and click the 16.000 MHz metallic quartz crystal oscillator that provides the CPU master heartbeat.",
+      "question_bn": "সিপিইউ-এর ১৬ মেগাহার্টজ মাস্টার ক্লক উৎপন্নকারী ধাতব কোয়ার্টজ ক্রিস্টালটিতে ক্লিক করুন।",
+      "hint_en": "It is an oval silver metallic can located between the USB port and the ATmega328P chip.",
+      "hint_bn": "ইউএসবি পোর্ট এবং এটিমেগা৩২৮পি চিপের মধ্যবর্তী সিলভার ধাতব ওভাল যন্ত্রাংশটি দেখুন।",
+      "correct_mesh": "Comp_Crystal16MHz",
+      "target_name_en": "16.000 MHz Crystal Oscillator",
+      "target_name_bn": "১৬ মেগাহার্টজ ক্রিস্টাল অসিলেটর"
+    },
+    {
+      "id": "q_uno_3",
+      "question_en": "Click on the 5V regulated power output pin used to supply breadboard sensors.",
+      "question_bn": "ব্রেডবোর্ড সেন্সরে বিদ্যুৎ সরবরাহ করতে ব্যবহৃত ৫ ভোল্ট রেগুলেটেড পাওয়ার পিনটিতে ক্লিক করুন।",
+      "hint_en": "Look on the lower POWER header, right next to 3.3V and GND.",
+      "hint_bn": "নিচের পাওয়ার হেডারে ৩.৩ ভোল্ট এবং গ্রাউন্ডের মাঝে খুঁজুন।",
+      "correct_mesh": "Pin_5V",
+      "target_name_en": "5V Power Pin",
+      "target_name_bn": "৫ ভোল্ট পাওয়ার পিন"
+    },
+    {
+      "id": "q_uno_4",
+      "question_en": "Identify the primary external hardware interrupt pin (INT0) with highest priority.",
+      "question_bn": "সর্বোচ্চ অগ্রাধিকারপ্রাপ্ত প্রধান হার্ডওয়্যার এক্সটারনাল ইন্টারাপ্ট পিন (INT0) চিহ্নিত করুন।",
+      "hint_en": "Located on the digital header next to TX, RX, and Pin 3.",
+      "hint_bn": "ডিজিটাল হেডারে TX, RX এবং পিন ৩-এর মাঝে অবস্থিত।",
+      "correct_mesh": "Pin_D2",
+      "target_name_en": "Digital Pin 2 (INT0)",
+      "target_name_bn": "ডিজিটাল পিন ২ (INT0)"
+    }
+  ],
+  "intel_8086": [
+    {
+      "id": "q_8086_1",
+      "question_en": "Click the Address Latch Enable (ALE) pin used to separate the address and data bus.",
+      "question_bn": "অ্যাড্রেস ও ডেটা বাসকে আলাদা করতে ব্যবহৃত অ্যাড্রেস ল্যাচ এনেবল (ALE - পিন ৩১) পিনে ক্লিক করুন।",
+      "hint_en": "Pin 31 on the upper control bank in Minimum Mode.",
+      "hint_bn": "মিনিমাম মোডের কন্ট্রোল লাইনে পিন ৩১ চিহ্নিত করুন।",
+      "correct_mesh": "Pin_ALE_31",
+      "target_name_en": "ALE (Pin 31)",
+      "target_name_bn": "ALE (পিন ৩১)"
+    },
+    {
+      "id": "q_8086_2",
+      "question_en": "Find the Non-Maskable Interrupt (NMI) pin dedicated to catastrophic hardware failures.",
+      "question_bn": "জরুরি হার্ডওয়্যার ত্রুটি সংক্রান্ত নন-মাস্কাবল ইন্টারাপ্ট (NMI - পিন ১৭) পিনে ক্লিক করুন।",
+      "hint_en": "Located at Pin 17, right before INTR (Pin 18).",
+      "hint_bn": "INTR (পিন ১৮)-এর ঠিক আগে পিন ১৭-এ অবস্থিত।",
+      "correct_mesh": "Pin_NMI_17",
+      "target_name_en": "NMI (Pin 17)",
+      "target_name_bn": "NMI (পিন ১৭)"
+    }
+  ],
+  "robotic_arm": [
+    {
+      "id": "q_arm_1",
+      "question_en": "Click on the End-Effector Gripper Claw designed for grasping and pick-and-place tasks.",
+      "question_bn": "বস্তু আঁকড়ে ধরতে ব্যবহৃত রোবোটিক আর্মের গ্রিপার ক্ল এন্ড-ইফেক্টরটিতে ক্লিক করুন।",
+      "hint_en": "The topmost articulated mechanical jaw driven by Arduino Pin D9.",
+      "hint_bn": "রোবট আর্মের একদম অগ্রভাগের যান্ত্রিক থাবা (Claw)।",
+      "correct_mesh": "Servo_Gripper_Claw",
+      "target_name_en": "Gripper Claw Servo",
+      "target_name_bn": "গ্রিপার ক্ল সার্ভো"
+    }
+  ]
+}

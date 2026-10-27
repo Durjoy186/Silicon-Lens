@@ -1,0 +1,97 @@
+{
+  "device": "robotic_arm",
+  "name_en": "4-DOF SG90 Servo Robotic Arm",
+  "name_bn": "৪-ডিএফ এসজি৯০ সার্ভো রোবোটিক আর্ম",
+  "description_en": "The most popular academic robotics and mechatronics kit in university laboratories. Built using laser-cut acrylic linkages, driven by 4 micro-servos (Base, Shoulder, Elbow, Gripper Claw), and controlled via Arduino PWM channels.",
+  "description_bn": "বিশ্ববিদ্যালয়ের ল্যাবরেটরির সবচেয়ে জনপ্রিয় রোবোটিক্স এবং মেকাট্রনিক্স প্রজেক্ট কিট। অ্যাক্রিলিক ফ্রেম এবং ৪টি মাইক্রো-সার্ভো (বেস, শোল্ডার, কনুই, গ্রিপার ক্ল) দ্বারা গঠিত, যা আর্ডুইনোর পিডব্লিউএম চ্যানেল দিয়ে পরিচালিত হয়।",
+  "specs_summary": {
+    "degrees_of_freedom": "4 Degrees of Freedom (Base Yaw, Shoulder Pitch, Elbow Pitch, Gripper Claw)",
+    "actuators": "4x TowerPro SG90 9g Micro Servos",
+    "operating_voltage": "4.8V - 6.0V DC (Standard 5V Rail)",
+    "stall_torque": "1.8 kg-cm (at 4.8V)",
+    "pwm_control_frequency": "50 Hz (20 ms period, 1.0 ms to 2.0 ms active pulse width)",
+    "microcontroller_interface": "Arduino Uno Digital PWM Pins D3, D5, D6, D9"
+  },
+  "items": [
+    {
+      "id": "servo_base",
+      "mesh_name": "Servo_Base_Yaw",
+      "category": "servo_actuator",
+      "name_en": "Base Rotation Servo (Yaw Axis)",
+      "name_bn": "বেস রোটেশন সার্ভো (ইয়াও এক্সিস)",
+      "subtitle_en": "360°/180° Swivel Turntable Actuator",
+      "subtitle_bn": "১৮০-ডিগ্রি অনুভূমিক ঘূর্ণন মোটর",
+      "function_en": "Controls the horizontal pan rotation (0° to 180°) of the entire robot arm assembly. Driven by PWM pulses from Arduino Pin D3. Essential for pick-and-place coordinate alignment.",
+      "function_bn": "সম্পূর্ণ রোবোটিক আর্মের অনুভূমিক সুইভেল বা ঘূর্ণন (০ থেকে ১৮০ ডিগ্রি) নিয়ন্ত্রণ করে। আর্ডুইনো পিন D3 থেকে পিডব্লিউএম সিগন্যাল গ্রহণ করে বিভিন্ন অবস্থানের বস্তু তুলতে সাহায্য করে।",
+      "electrical": {
+        "pwm_pin": "Arduino Digital Pin D3 (Timer2 PWM)",
+        "control_pulse": "1000 µs (0°) to 2000 µs (180°)",
+        "power_supply": "5V DC, Ground return to Arduino GND"
+      },
+      "syllabus_tags": ["Forward Kinematics", "Servo PWM", "Robotic Arm"],
+      "course_context": "Robotics & Control Lab: Denavit-Hartenberg (D-H) parameter modeling for base coordinate frame translation.",
+      "related_pins": ["Pin_D3", "Pin_5V", "Pin_GND1"],
+      "camera_target": [0.0, 0.4, 0.0]
+    },
+    {
+      "id": "servo_shoulder",
+      "mesh_name": "Servo_Shoulder_Pitch",
+      "category": "servo_actuator",
+      "name_en": "Shoulder Lift Servo (Pitch Axis)",
+      "name_bn": "শোল্ডার লিফট সার্ভো (পিচ এক্সিস)",
+      "subtitle_en": "Primary Vertical Elevation Actuator",
+      "subtitle_bn": "প্রধান উল্লম্ব উত্তোলন মোটর",
+      "function_en": "Lifts and lowers the main bicep arm linkage against gravity. Connected to Arduino Pin D5. Bears the maximum cantilever mechanical torque in the kinematic chain.",
+      "function_bn": "রোবট আর্মের মূল বাহুকে মাধ্যাকর্ষণ বলের বিপরীতে উপরে তোলা ও নামানোর কাজ করে। আর্ডুইনোর পিন D5-এর সাথে যুক্ত। এই মোটরে সর্বাধিক মেকানিক্যাল টর্ক প্রয়োজন হয়।",
+      "electrical": {
+        "pwm_pin": "Arduino Digital Pin D5 (Timer0 PWM)",
+        "control_pulse": "50 Hz PWM standard",
+        "stall_current": "Up to 650 mA during heavy payload lift"
+      },
+      "syllabus_tags": ["Torque & Dynamics", "Kinematics", "Servo PWM"],
+      "course_context": "Mechatronics: Static torque calculations T = m * g * L and counterweight balancing.",
+      "related_pins": ["Pin_D5", "Pin_5V", "Pin_GND1"],
+      "camera_target": [0.0, 1.2, 0.2]
+    },
+    {
+      "id": "servo_elbow",
+      "mesh_name": "Servo_Elbow_Pitch",
+      "category": "servo_actuator",
+      "name_en": "Elbow Joint Servo (Forearm Pitch)",
+      "name_bn": "কনুই জয়েন্ট সার্ভো (এলবো পিচ)",
+      "subtitle_en": "Secondary Reach & Extension Joint",
+      "subtitle_bn": "দ্বিতীয় বাহুর প্রসারণ ও রিচ কন্ট্রোল",
+      "function_en": "Adjusts the forearm reach and extension angle, allowing the end-effector to touch targets closer or farther from the base. Driven by Arduino Pin D6.",
+      "function_bn": "রোবট আর্মের অগ্রবাহুর কোণ নিয়ন্ত্রণ করে যাতে গ্রিপারটি কাঙ্ক্ষিত দূরত্বের বস্তুর কাছে পৌঁছাতে পারে। আর্ডুইনোর পিন D6 দিয়ে পরিচালিত হয়।",
+      "electrical": {
+        "pwm_pin": "Arduino Digital Pin D6 (Timer0 PWM)",
+        "pulse_frequency": "50 Hz PWM",
+        "gear_train": "Nylon gears with 180° mechanical stops"
+      },
+      "syllabus_tags": ["Kinematics", "Inverse Kinematics", "PWM"],
+      "course_context": "Robotics: Geometric Inverse Kinematics (IK) calculation using the law of cosines.",
+      "related_pins": ["Pin_D6", "Pin_5V", "Pin_GND2"],
+      "camera_target": [0.0, 2.0, 0.6]
+    },
+    {
+      "id": "servo_gripper",
+      "mesh_name": "Servo_Gripper_Claw",
+      "category": "end_effector",
+      "name_en": "Gripper Claw End-Effector",
+      "name_bn": "গ্রিপার ক্ল এন্ড-ইফেক্টর (Claw)",
+      "subtitle_en": "Intermeshing Dual-Jaw Mechanical Gripper",
+      "subtitle_bn": "দ্বিমুখী মেকানিক্যাল গ্রিপার ক্ল",
+      "function_en": "The end-effector of the robot arm. Uses an SG90 servo connected to Arduino Pin D9 to open and close precision laser-cut gear teeth for grasping, lifting, and sorting lab objects.",
+      "function_bn": "রোবট আর্মের হাতের থাবা (End-Effector)। আর্ডুইনোর পিন D9 থেকে পিডব্লিউএম সিগন্যাল নিয়ে সার্ভো মোটরের গিয়ারের সাহায্যে ক্ল ওপেন বা ক্লোজ করে বস্তু আঁকড়ে ধরে।",
+      "electrical": {
+        "pwm_pin": "Arduino Digital Pin D9 (Timer1 PWM)",
+        "grip_range": "0 mm to 55 mm jaw width",
+        "clamping_force": "~1.2 N (limited by servo stall rating)"
+      },
+      "syllabus_tags": ["End-Effectors", "PWM", "Robotics Projects"],
+      "course_context": "Automation: Pick-and-place logic sequencing and state machine controllers.",
+      "related_pins": ["Pin_D9", "Pin_5V", "Pin_GND2"],
+      "camera_target": [0.0, 2.6, 1.1]
+    }
+  ]
+}

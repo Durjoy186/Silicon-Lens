@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <rect width="100" height="100" rx="22" fill="#0f172a" />
+  <rect x="25" y="25" width="50" height="50" rx="8" fill="#0ea5e9" fill-opacity="0.15" stroke="#38bdf8" stroke-width="3" />
+  <!-- Chip Pins -->
+  <line x1="35" y1="15" x2="35" y2="25" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" />
+  <line x1="50" y1="15" x2="50" y2="25" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" />
+  <line x1="65" y1="15" x2="65" y2="25" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" />
+  <line x1="35" y1="75" x2="35" y2="85" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" />
+  <line x1="50" y1="75" x2="50" y2="85" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" />
+  <line x1="65" y1="75" x2="65" y2="85" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" />
+  <!-- Silicon Lens Reticle -->
+  <circle cx="50" cy="50" r="16" stroke="#f59e0b" stroke-width="2.5" stroke-dasharray="4 2" />
+  <circle cx="50" cy="50" r="6" fill="#f59e0b" />
+</svg>

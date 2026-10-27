@@ -1,0 +1,184 @@
+{
+  "device": "intel_8086",
+  "name_en": "Intel 8086 Microprocessor (DIP-40)",
+  "name_bn": "ইন্টেল ৮০৮৬ মাইক্রোপ্রসেসর (DIP-40)",
+  "description_en": "The seminal 16-bit microprocessor that launched the x86 personal computing revolution. Features a 1MB address space (20-bit address bus), 16-bit data bus multiplexed on pins AD0-AD15, and a pipelined BIU/EU architecture.",
+  "description_bn": "আধুনিক x86 আর্কিটেকচারের ভিত্তিপ্রস্তর স্থাপনকারী ঐতিহাসিক ১৬-বিট মাইক্রোপ্রসেসর। এতে রয়েছে ২০-বিট অ্যাড্রেস বাস (১ মেগাবাইট মেমরি), ১৬-বিট টাইম-মাল্টিপ্লেক্সড ডেটা বাস এবং পাইপলাইনড বিআইইউ/ইইউ (BIU/EU) আর্কিটেকচার।",
+  "specs_summary": {
+    "architecture": "16-bit CISC Microprocessor",
+    "technology": "HMOS (~29,000 transistors)",
+    "package": "40-Pin Ceramic / Plastic Dual In-Line Package (DIP)",
+    "address_bus": "20-bit (1,048,576 bytes / 1MB physical address space)",
+    "data_bus": "16-bit (time-multiplexed on AD0 - AD15)",
+    "clock_frequency": "5 MHz (standard 8086), 8 MHz (8086-2), 10 MHz (8086-1)",
+    "operating_modes": "Minimum Mode (single-CPU) / Maximum Mode (multiprocessor with 8288)"
+  },
+  "items": [
+    {
+      "id": "pin_ad0",
+      "mesh_name": "Pin_AD0_16",
+      "pin_number": 16,
+      "category": "multiplexed_bus",
+      "name_en": "AD0 (Pin 16) - Multiplexed Address/Data Bit 0",
+      "name_bn": "AD0 (পিন ১৬) - টাইম-মাল্টিপ্লেক্সড অ্যাড্রেস/ডেটা বিট ০",
+      "subtitle_en": "Least Significant Address & Data Bus Line",
+      "subtitle_bn": "অ্যাড্রেস ও ডেটা বাসের সর্বনিম্ন তাৎপর্যপূর্ণ বিট (LSB)",
+      "function_en": "Time-multiplexed address/data line. During clock cycle T1 of a bus cycle, it carries Address Bit A0 (latched by ALE signal into an external 74LS373 latch). During T2, T3, and T4, it turns into bidirectional Data Bit D0.",
+      "function_bn": "টাইম-মাল্টিপ্লেক্সড বাস লাইন। টি১ (T1) ক্লক সাইকেলে এটি মেমরি অ্যাড্রেসের বিট A0 বহন করে যা ALE পালস দিয়ে ল্যাচ করা হয়। পরবর্তীতে T2 থেকে T4 সাইকেলে এটি উভয়মুখী ডেটা বিট D0 হিসেবে কাজ করে।",
+      "electrical": {
+        "logic_level": "Standard 5V TTL",
+        "direction": "Bidirectional (Tristate)",
+        "timing": "Address during T1, Data during T2-T4"
+      },
+      "syllabus_tags": ["Bus Multiplexing", "ALE Signal", "Timing Diagrams", "Demultiplexing"],
+      "course_context": "Gaonkar & Hall: Demultiplexing the AD bus using 8282/74LS373 octal transparent latches.",
+      "related_pins": ["Pin_ALE_31", "Pin_DEN_32", "Pin_AD15_2"],
+      "camera_target": [-1.2, 0.2, 1.8]
+    },
+    {
+      "id": "pin_ad15",
+      "mesh_name": "Pin_AD15_2",
+      "pin_number": 2,
+      "category": "multiplexed_bus",
+      "name_en": "AD15 (Pin 2) - Multiplexed Address/Data Bit 15",
+      "name_bn": "AD15 (পিন ২) - টাইম-মাল্টিপ্লেক্সড অ্যাড্রেস/ডেটা বিট ১৫",
+      "subtitle_en": "Most Significant Word-Data Line (High Byte)",
+      "subtitle_bn": "হাই-বাইট ডেটার সর্বোচ্চ তাৎপর্যপূর্ণ বিট (MSB)",
+      "function_en": "Carries Address A15 during T1 and Data D15 during T2-T4. Together with BHE# (Bus High Enable), it selects whether the CPU accesses the Upper Memory Bank (odd addresses) across the 16-bit bus.",
+      "function_bn": "T1 সাইকেলে অ্যাড্রেস বিট A15 এবং পরবর্তী সময়ে হাই-বাইটের ডেটা বিট D15 পরিবহন করে। BHE# সিগন্যালের সাথে যৌথভাবে মেমরির আপার ব্যাংক (বিজোড় অ্যাড্রেস) নির্বাচন করে।",
+      "electrical": {
+        "logic_level": "5V TTL",
+        "direction": "Bidirectional",
+        "bus_bank": "Upper Memory Bank (Odd bytes)"
+      },
+      "syllabus_tags": ["Memory Banking", "BHE# Signal", "Even/Odd Banks"],
+      "course_context": "Brey / Hall: Memory interleaving, odd and even bank selection using A0 and BHE#.",
+      "related_pins": ["Pin_BHE_34", "Pin_AD0_16"],
+      "camera_target": [-1.4, 0.2, -1.8]
+    },
+    {
+      "id": "pin_ale",
+      "mesh_name": "Pin_ALE_31",
+      "pin_number": 31,
+      "category": "control_signal",
+      "name_en": "ALE (Pin 31) - Address Latch Enable",
+      "name_bn": "ALE (পিন ৩১) - অ্যাড্রেস ল্যাচ এনেবল",
+      "subtitle_en": "Active-HIGH Bus Demultiplexing Strobe Pulse",
+      "subtitle_bn": "অ্যাক্টিভ-হাই অ্যাড্রেস ডিমাল্টিপ্লেক্সিং স্ট্রোব পালস",
+      "function_en": "A positive pulse issued by the 8086 during T1 of every bus cycle. Signals external latches (such as the 74LS373 / 8282) that valid address signals are present on AD0-AD15, allowing the external system to separate the pure address from data.",
+      "function_bn": "প্রতিটি বাস সাইকেলের T1 মুহূর্তে প্রসেসর কর্তৃক প্রদত্ত একটি পজিটিভ পালস। এটি ৭৪এলএস৩৭৩ ল্যাচকে জানিয়ে দেয় যে বাসটিতে সঠিক অ্যাড্রেস উপস্থিত রয়েছে এবং অ্যাড্রেসকে ডেটা থেকে আলাদা করে মেমরিতে প্রেরণ করে।",
+      "electrical": {
+        "pulse_type": "Active HIGH pulse during T1",
+        "duration": "1 Clock Period (T1)",
+        "fanout": "Can drive up to 10 standard TTL loads"
+      },
+      "syllabus_tags": ["Demultiplexing", "ALE Signal", "Bus Timing", "Latches"],
+      "course_context": "BUET CSE-313 / RUET EEE-321: Circuit diagram of 8086 address latching using three 74LS373 ICs.",
+      "related_pins": ["Pin_AD0_16", "Pin_DEN_32", "Pin_DTR_27"],
+      "camera_target": [1.4, 0.2, -1.8]
+    },
+    {
+      "id": "pin_nmi",
+      "mesh_name": "Pin_NMI_17",
+      "pin_number": 17,
+      "category": "interrupt_pin",
+      "name_en": "NMI (Pin 17) - Non-Maskable Interrupt",
+      "name_bn": "NMI (পিন ১৭) - নন-মাস্কাবল ইন্টারাপ্ট",
+      "subtitle_en": "Edge-Triggered High-Priority Catastrophic Event Interrupt",
+      "subtitle_bn": "এজ-ট্রিগারড সর্বোচ্চ প্রায়োরিটি বিপদ সংকেত ইন্টারাপ্ট",
+      "function_en": "Hardware interrupt that cannot be masked by software (clearing the IF flag has no effect). Triggered by a positive transition (LOW to HIGH edge). Dedicated to Type 2 in the Interrupt Vector Table (located at physical address 00008H). Used for catastrophic faults like power loss detection, parity errors, and watchdogs.",
+      "function_bn": "হার্ডওয়্যার ইন্টারাপ্ট যা কোনো সফটওয়্যার বা IF ফ্ল্যাগ দিয়ে বন্ধ করা যায় না। এটি পজিটিভ এজে (লো থেকে হাই) ট্রিগার হয়। ভেক্টর টেবিলের টাইপ ২-তে (অ্যাড্রেস 00008H) এটি সংরক্ষিত। বিদ্যুৎ চলে যাওয়া বা মেমরি প্যারিটি ভুলের মতো জরুরি অবস্থায় এটি ব্যবহৃত হয়।",
+      "electrical": {
+        "trigger": "Positive edge (LOW-to-HIGH transition)",
+        "vector_type": "Type 2 Interrupt (IVT Address: 00008H)",
+        "maskability": "Unmaskable"
+      },
+      "syllabus_tags": ["Interrupt Architecture", "IVT (Vector Table)", "NMI", "Priority Logic"],
+      "course_context": "Microprocessor Interrupts: Structure of the 1KB Interrupt Vector Table (IVT) from 00000H to 003FFH.",
+      "related_pins": ["Pin_INTR_18", "Pin_RESET_21"],
+      "camera_target": [-1.1, 0.2, 1.8]
+    },
+    {
+      "id": "pin_intr",
+      "mesh_name": "Pin_INTR_18",
+      "pin_number": 18,
+      "category": "interrupt_pin",
+      "name_en": "INTR (Pin 18) - Interrupt Request",
+      "name_bn": "INTR (পিন ১৮) - ইন্টারাপ্ট রিকোয়েস্ট",
+      "subtitle_en": "Level-Triggered Maskable Peripheral Interrupt Line",
+      "subtitle_bn": "লেভেল-ট্রিগারড মাস্কাবল পেরিফেরাল ইন্টারাপ্ট লাইন",
+      "function_en": "General-purpose maskable hardware interrupt input sampled at the penultimate clock cycle of each instruction. If Interrupt Flag (IF = 1), the processor enters an interrupt acknowledge cycle (generating INTA# pulses to fetch vector byte from an 8259A PIC). Can be disabled via CLI instruction.",
+      "function_bn": "সাধারণ মাস্কাবল হার্ডওয়্যার ইন্টারাপ্ট লাইন। প্রতি ইন্সট্রাকশনের শেষ ক্লক সাইকেলে এটি চেক করা হয়। IF ফ্ল্যাগ ১ থাকলে প্রসেসর দুটি INTA# পালস দিয়ে ৮২৫৯এ চিপ থেকে ভেক্টর নম্বর নিয়ে সংশ্লিষ্ট সাবরুটিন রান করে।",
+      "electrical": {
+        "trigger": "Active HIGH level-sensitive",
+        "maskability": "Maskable via IF flag (CLI / STI instructions)",
+        "controller": "Directly interfaces to Intel 8259A Programmable Interrupt Controller"
+      },
+      "syllabus_tags": ["Interrupt Architecture", "8259A PIC", "CLI / STI", "INTA# Cycle"],
+      "course_context": "8086 Interfacing: Cascading multiple 8259A interrupt controllers for 64 vectored interrupts.",
+      "related_pins": ["Pin_NMI_17", "Pin_INTA_24"],
+      "camera_target": [-0.9, 0.2, 1.8]
+    },
+    {
+      "id": "pin_mnmx",
+      "mesh_name": "Pin_MNMX_33",
+      "pin_number": 33,
+      "category": "configuration",
+      "name_en": "MN / MX# (Pin 33) - Minimum / Maximum Mode Select",
+      "name_bn": "MN / MX# (পিন ৩৩) - মিনিমাম / ম্যাক্সিমাম মোড সিলেক্ট",
+      "subtitle_en": "Hardware Operating Mode Configuration Pin",
+      "subtitle_bn": "হার্ডওয়্যার অপারেটিং মোড কনফিগারেশন পিন",
+      "function_en": "Tied to +5V (VCC) for Minimum Mode, in which the 8086 directly generates its own bus control signals (RD#, WR#, M/IO#, ALE, INTA#) for single-CPU systems. Tied to GND (0V) for Maximum Mode, in which control pins are repurposed for multiprocessor arbitration (status lines S0#, S1#, S2# decoded by an external 8288 Bus Controller, and co-processor support for 8087 math coprocessor).",
+      "function_bn": "মিনিমাম মোডের জন্য একে +৫ ভোল্টে যুক্ত করা হয়, যাতে প্রসেসর নিজেই সব বাস কন্ট্রোল সিগন্যাল তৈরি করে। ম্যাক্সিমাম মোডের জন্য একে ০ ভোল্টে (গ্রাউন্ড) যুক্ত করা হয়, যাতে ৮২৮৮ বাস কন্ট্রোলার এবং ৮০৮৭ ম্যাথ কো-প্রসেসরের সাথে মাল্টিপ্রসেসর কাজ করা যায়।",
+      "electrical": {
+        "minimum_mode": "Connect to +5.0V (Single CPU system)",
+        "maximum_mode": "Connect to 0.0V GND (Multiprocessor / 8087 Coprocessor)",
+        "input_type": "Hardware strap"
+      },
+      "syllabus_tags": ["Minimum/Maximum Mode", "8288 Bus Controller", "Multiprocessor Systems"],
+      "course_context": "Exam Question: Compare pin functions between 8086 Minimum Mode and Maximum Mode.",
+      "related_pins": ["Pin_ALE_31", "Pin_DEN_32"],
+      "camera_target": [1.6, 0.2, -1.8]
+    },
+    {
+      "id": "block_biu",
+      "mesh_name": "Block_BIU",
+      "category": "xray_architecture",
+      "name_en": "Bus Interface Unit (BIU)",
+      "name_bn": "বাস ইন্টারফেস ইউনিট (BIU)",
+      "subtitle_en": "Instruction Prefetching & Physical Address Generation Engine",
+      "subtitle_bn": "ইন্সট্রাকশন প্রিফেচিং ও ফিজিক্যাল অ্যাড্রেস জেনারেশন ইঞ্জিন",
+      "function_en": "The frontend of the 8086 pipeline. Responsible for fetching instructions from memory while the Execution Unit (EU) executes previously decoded instructions. Houses the 4 Segment Registers (CS, DS, SS, ES), the 16-bit Instruction Pointer (IP), the 20-bit Address Generation Adder, and the 6-byte FIFO Instruction Queue.",
+      "function_bn": "৮০৮৬ প্রসেসরের অগ্রবর্তী পাইপলাইন ইউনিট। ইইউ (EU) যখন আগের নির্দেশিকা এক্সিকিউট করে, তখন বিআইইউ মেমরি থেকে পরবর্তী নির্দেশিকা ফেচ করে রাখে। এতে রয়েছে ৪টি সেগমেন্ট রেজিস্টার (CS, DS, SS, ES), ইন্সট্রাকশন পয়েন্টার (IP), ২০-বিট অ্যাড্রেস অ্যাডার এবং ৬-বাইটের কিউ (FIFO Queue)।",
+      "electrical": {
+        "queue_size": "6 bytes FIFO prefetch buffer",
+        "segment_registers": "CS (Code), DS (Data), SS (Stack), ES (Extra) - 16-bit each",
+        "address_calculation": "Physical Address = (Segment Register * 16) + Offset"
+      },
+      "syllabus_tags": ["BIU & EU", "Pipelining", "Segment Registers", "Prefetch Queue"],
+      "course_context": "Computer Architecture: 2-stage instruction pipelining and memory segmentation arithmetic.",
+      "related_pins": ["Block_EU", "Block_Queue", "Block_SegRegisters"],
+      "camera_target": [-0.6, 0.5, 0.0]
+    },
+    {
+      "id": "block_eu",
+      "mesh_name": "Block_EU",
+      "category": "xray_architecture",
+      "name_en": "Execution Unit (EU)",
+      "name_bn": "এক্সিকিউশন ইউনিট (EU)",
+      "subtitle_en": "Arithmetic Logic Unit, Register File & Control Decoder",
+      "subtitle_bn": "অ্যারিথমেটিক লজিক ইউনিট (ALU), রেজিস্টার ফাইল ও কন্ট্রোল ডিকোডার",
+      "function_en": "The processing core of the 8086. Takes opcodes fetched by the BIU queue, decodes them via internal microcode ROM, and performs arithmetic or logical operations inside the 16-bit ALU. Contains General-Purpose Registers (AX, BX, CX, DX), Pointer/Index Registers (SP, BP, SI, DI), and the 16-bit Flag Register.",
+      "function_bn": "৮০৮৬-এর মূল প্রক্রিয়াকরণ কোর। বিআইইউ কিউ থেকে ইন্সট্রাকশন বাইট সংগ্রহ করে অভ্যন্তরীণ কন্ট্রোল সিস্টেম দিয়ে ডিকোড করে এবং ১৬-বিট ALU-তে হিসাব সম্পন্ন করে। এতে রয়েছে সাধারণ রেজিস্টার (AX, BX, CX, DX), পয়েন্টার ও ইনডেক্স রেজিস্টার এবং ফ্ল্যাগ রেজিস্টার।",
+      "electrical": {
+        "alu_width": "16-bit full arithmetic/logic ALU",
+        "working_registers": "AX (Accumulator), BX (Base), CX (Count), DX (Data)",
+        "flags": "9 Active Flags (6 Status Flags: CF, PF, AF, ZF, SF, OF; 3 Control Flags: TF, IF, DF)"
+      },
+      "syllabus_tags": ["ALU", "Register Architecture", "Flag Register", "Microcode"],
+      "course_context": "Gaonkar: Flag register layout and conditional jump branching conditions (e.g. JZ, JNZ, JC).",
+      "related_pins": ["Block_BIU", "Block_ALU", "Block_Registers"],
+      "camera_target": [0.6, 0.5, 0.0]
+    }
+  ]
+}

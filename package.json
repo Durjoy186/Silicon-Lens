@@ -1,0 +1,13 @@
+{
+  "name": "silicon-lens",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "start": "cmd /c start-silicon-lens.bat",
+    "stop": "cmd /c stop-silicon-lens.bat",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "build:client": "cd client && npm run build",
+    "start:server": "cd server && npm run start"
+  }
+}

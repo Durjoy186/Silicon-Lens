@@ -1,0 +1,947 @@
+{
+  "device": "arduino_uno",
+  "name_en": "Arduino Uno R3 (ATmega328P)",
+  "name_bn": "আর্ডুইনো ইউনো আর৩ (এটিমেগা৩২৮পি)",
+  "description_en": "The definitive 8-bit AVR development board. Features 14 digital I/O pins (6 PWM), 6 analog inputs, dual ICSP programming headers, USB-to-Serial interface, and 16 MHz quartz crystal.",
+  "description_bn": "বিশ্ববিদ্যালয়ের মাইক্রোকন্ট্রোলার ল্যাবরেটরির প্রধান ৮-বিট এভিআর ডেভেলপমেন্ট বোর্ড। এতে রয়েছে ১৪টি ডিজিটাল I/O পিন, ৬টি অ্যানালগ ইনপুট, দুটি আইসিএসপি হেডার এবং ইউএসবি-সিরিয়াল ইন্টারফেস।",
+  "specs_summary": {
+    "microcontroller": "ATmega328P (8-bit AVR RISC in DIP-28 Socket)",
+    "usb_controller": "ATmega16U2 (USB-to-Serial converter)",
+    "operating_voltage": "5V DC",
+    "input_voltage": "7V - 12V DC (Limit: 6V - 20V)",
+    "clock_speed": "16.000 MHz (Quartz Resonator)",
+    "flash_memory": "32 KB (0.5 KB bootloader)",
+    "sram": "2 KB",
+    "eeprom": "1 KB"
+  },
+  "hardware_guide": {
+    "power_supply": {
+      "title_en": "Power Supply",
+      "title_bn": "পাওয়ার সাপ্লাই",
+      "description_en": "The power supply of the Arduino can be done with the help of an exterior power supply otherwise USB connection. The exterior power supply (6 to 20 volts) mainly includes a battery or an AC to DC adapter. The connection of an adapter can be done by plugging a center-positive plug (2.1mm) into the power jack on the board. The battery terminals can be placed in the pins of Vin as well as GND. The power pins of an Arduino board include the following: Vin, 5Volts, 3V3, and GND.",
+      "pins": {
+        "Vin": "The input voltage or Vin to the Arduino while it is using an exterior power supply opposite to volts from the connection of USB or else RPS (regulated power supply). By using this pin, one can supply the voltage.",
+        "5Volts": "The RPS can be used to give the power supply to the microcontroller as well as components which are used on the Arduino board. This can approach from the input voltage through a regulator.",
+        "3V3": "A 3.3 supply voltage can be generated with the onboard regulator, and the highest draw current will be 50 mA.",
+        "GND": "GND (ground) pins."
+      }
+    },
+    "memory": {
+      "title_en": "Memory",
+      "title_bn": "মেমরি",
+      "description_en": "The memory of an ATmega328 microcontroller includes 32 KB and 0.5 KB memory is utilized for the Boot loader), and also it includes SRAM-2 KB as well as EEPROM-1KB.",
+      "flash": "32 KB (0.5 KB memory is utilized for the Boot loader)",
+      "sram": "2 KB",
+      "eeprom": "1 KB"
+    },
+    "input_and_output": {
+      "title_en": "Input and Output",
+      "title_bn": "ইনপুট এবং আউটপুট",
+      "description_en": "We know that an Arduino Uno R3 includes 14-digital pins which can be used as an input otherwise output by using the functions like pinMode(), digitalRead(), and digitalWrite(). These pins can operate with 5V, and every digital pin can give or receive 20mA, & includes a 20k to 50k ohm pull up resistor. The maximum current on any pin is 40mA which cannot surpass for avoiding the microcontroller from the damage. Additionally, some of the pins of an Arduino include specific functions.",
+      "pins_count": "14 Digital Pins (Pin 0 to Pin 13)",
+      "operating_voltage": "5V DC",
+      "current_rating": "20mA nominal give or receive",
+      "maximum_current_limit": "40mA absolute maximum per pin",
+      "internal_pullup": "20k to 50k ohm pull up resistor",
+      "core_functions": ["pinMode()", "digitalRead()", "digitalWrite()"]
+    },
+    "serial_pins": {
+      "title_en": "Serial Pins",
+      "title_bn": "সিরিয়াল পিনসমূহ",
+      "description_en": "The serial pins of an Arduino board are TX (1) and RX (0) pins and these pins can be used to transfer the TTL serial data. The connection of these pins can be done with the equivalent pins of the ATmega8 U2 USB to TTL chip.",
+      "tx_pin": "Digital Pin 1 (TX - Transmitter)",
+      "rx_pin": "Digital Pin 0 (RX - Receiver)",
+      "chip_link": "Connected with equivalent pins of the ATmega8 U2 / ATmega16U2 USB to TTL chip"
+    },
+    "external_interrupt_pins": {
+      "title_en": "External Interrupt Pins",
+      "title_bn": "এক্সটার্নাল ইন্টারাপ্ট পিনসমূহ",
+      "description_en": "The external interrupt pins of the board are 2 & 3, and these pins can be arranged to activate an interrupt on a rising otherwise falling edge, a low-value otherwise a modify in value.",
+      "pins": ["Digital Pin 2 (INT0)", "Digital Pin 3 (INT1)"],
+      "modes": ["RISING edge", "FALLING edge", "LOW-value", "CHANGE (modify in value)"]
+    },
+    "pwm_pins": {
+      "title_en": "PWM Pins",
+      "title_bn": "পিডব্লিউএম (PWM) পিনসমূহ",
+      "description_en": "The PWM pins of an Arduino are 3, 5, 6, 9, 10, & 11, and gives an output of an 8-bit PWM with the function analogWrite().",
+      "pins": [3, 5, 6, 9, 10, 11],
+      "resolution": "8-bit PWM (0 - 255)",
+      "function": "analogWrite()"
+    },
+    "spi_pins": {
+      "title_en": "SPI (Serial Peripheral Interface) Pins",
+      "title_bn": "এসপিআই (SPI) পিনসমূহ",
+      "description_en": "The SPI pins are 10, 11, 12, 13 namely SS, MOSI, MISO, SCK, and these will maintain the SPI communication with the help of the SPI library.",
+      "ss": "Pin 10 (SS - Slave Select)",
+      "mosi": "Pin 11 (MOSI - Master Out Slave In, used to transmit data to the devices)",
+      "miso": "Pin 12 (MISO - Serial CLK pulse will synchronize transmission produced by master)",
+      "sck": "Pin 13 (SCK - CLK pulse synchronizes data transmission generated by master)",
+      "icsp_header": "ICSP (in-circuit serial programming) headers can be utilized for programming ATmega microcontroller directly with the boot loader."
+    },
+    "led_pin": {
+      "title_en": "LED Pin",
+      "title_bn": "এলইডি (LED) পিন",
+      "description_en": "An Arduino board is inbuilt with a LED using digital pin-13. Whenever the digital pin is high, the LED will glow otherwise it will not glow.",
+      "pin": "Digital Pin 13",
+      "behavior": "HIGH = LED glows, LOW = LED off"
+    },
+    "twi_pins": {
+      "title_en": "TWI (2-Wire Interface) Pins",
+      "title_bn": "টিডব্লিউআই / আই২সি (TWI / I2C) পিনসমূহ",
+      "description_en": "The TWI pins are SDA or A4, & SCL or A5, which can support the communication of TWI with the help of Wire library. In this, both the SCL and SDA are CLK signal and data signal.",
+      "sda": "Pin A4 (SDA - Data signal)",
+      "scl": "Pin A5 (SCL - CLK signal)",
+      "library": "Wire library"
+    },
+    "aref_pin": {
+      "title_en": "AREF (Analog Reference) Pin",
+      "title_bn": "এরেফ (AREF - অ্যানালগ রেফারেন্স) পিন",
+      "description_en": "An analog reference pin is the reference voltage to the inputs of an analog i/ps using the function like analogReference().",
+      "function": "analogReference()"
+    },
+    "reset_pin": {
+      "title_en": "Reset (RST) Pin",
+      "title_bn": "রিসেট (RST) পিন",
+      "description_en": "This pin brings a low line for resetting the microcontroller, and it is very useful for using an RST button toward shields which can block the one over the Arduino R3 board.",
+      "behavior": "Active LOW line for resetting microcontroller"
+    },
+    "communication": {
+      "title_en": "Communication",
+      "title_bn": "কমিউনিকেশন প্রোটোকল",
+      "description_en": "The communication protocols of an Arduino Uno include SPI, I2C, and UART serial communication.",
+      "uart": "An Arduino Uno uses the two functions like the transmitter digital pin1 and the receiver digital pin0. These pins are mainly used in UART TTL serial communication.",
+      "i2c": "An Arduino UNO board employs SDA pin otherwise A4 pin & A5 pin otherwise SCL pin is used for I2C communication with wire library. In this, both the SCL and SDA are CLK signal and data signal.",
+      "spi": "The SPI communication includes MOSI, MISO, and SCK. MOSI (Pin11): This is the master out slave in the pin, used to transmit the data to the devices. MISO (Pin12): This pin is a serial CLK, and the CLK pulse will synchronize the transmission of which is produced by the master. SCK (Pin13): The CLK pulse synchronizes data transmission that is generated by the master. Equivalent pins with the SPI library is employed for the communication of SPI. ICSP (in-circuit serial programming) headers can be utilized for programming ATmega microcontroller directly with the boot loader."
+    }
+  },
+  "items": [
+    {
+      "id": "comp_usb_type_b",
+      "mesh_name": "Comp_USB_TypeB",
+      "category": "interface",
+      "name_en": "USB Type-B Female Port (Host PC Interface)",
+      "name_bn": "ইউএসবি টাইপ-বি মেটালিক ইন্টারফেস পোর্ট",
+      "subtitle_en": "Firmware Uploading, Serial Debugging & 5V Power",
+      "subtitle_bn": "ফার্মওয়্যার আপলোড, সিরিয়াল মনিটরিং এবং ৫ ভোল্ট বিদ্যুৎ সংযোগ",
+      "function_en": "High-durability full-size USB Type-B receptacle. Connects the Arduino to your computer for uploading code, real-time bidirectional Serial communication, and providing 500mA polyfuse-protected 5V bus power.",
+      "function_bn": "কম্পিউটারের সাথে আর্ডুইনোর মূল সংযোগ পোর্ট। এর মাধ্যমে নতুন প্রোগ্রাম আপলোড, রিয়েল-টাইম সিরিয়াল মনিটরিং এবং ৫০০ মিলিঅ্যাম্পিয়ার সুরক্ষিত ৫ ভোল্ট পাওয়ার সরবরাহ করা হয়।",
+      "quick_spec": "USB 2.0 Full-Speed · 500mA Protected VBUS",
+      "electrical": {
+        "vbus_power": "5.0V DC (up to 500 mA fuse limit)",
+        "protocol": "USB 2.0 Full Speed (12 Mbps)",
+        "protection": "500mA Resettable PTC Polyfuse",
+        "controller": "ATmega16U2 USB-to-Serial"
+      },
+      "syllabus_tags": ["USB Interface", "Serial Bootloading", "Power Management"],
+      "course_context": "Microcontroller Programming: USB enumeration and Optiboot serial bootloader baud handshake.",
+      "related_pins": ["Comp_Chip_16U2", "Comp_Polyfuse", "Pin_D0", "Pin_D1"],
+      "camera_target": [-2.2, 0.6, -1.3]
+    },
+    {
+      "id": "comp_dc_barrel_jack",
+      "mesh_name": "Comp_DC_BarrelJack",
+      "category": "power_supply",
+      "name_en": "2.1mm Center-Positive DC Barrel Jack (7V - 12V Input)",
+      "name_bn": "২.১ মিমি সেন্টার-পজিটিভ ডিসি ব্যারেল জ্যাক (৭-১২ ভোল্ট)",
+      "subtitle_en": "Unregulated External DC Power Connector",
+      "subtitle_bn": "বাহ্যিক ডিসি পাওয়ার সাপ্লাই সকেট (৭ থেকে ১২ ভোল্ট)",
+      "function_en": "Standard 2.1mm x 5.5mm center-positive barrel connector for standalone operation away from a computer. Feeds external 7V-12V power through an M7 reverse-polarity protection diode into the 5V linear voltage regulator.",
+      "function_bn": "স্ট্যান্ডার্ড ২.১ মিমি সেন্টার-পজিটিভ ডিসি জ্যাক। কম্পিউটার ছাড়া স্বাধীনভাবে আর্ডুইনো চালানোর জন্য ৯ ভোল্ট ব্যাটারি বা ১২ ভোল্ট অ্যাডাপ্টার সংযোগের সকেট। একটি M7 সুরক্ষা ডায়োড দিয়ে সুরক্ষিত।",
+      "quick_spec": "2.1mm Center-Positive · 7V–12V External DC",
+      "electrical": {
+        "jack_spec": "2.1mm center pin, 5.5mm outer ground sleeve",
+        "polarity": "Center Positive (+), Outer Sleeve Ground (-)",
+        "recommended_input": "7V - 12V DC (Limit: 6V - 20V)"
+      },
+      "syllabus_tags": ["Power Regulation", "Battery Supply", "Reverse Protection"],
+      "course_context": "Power Supplies & Regulators: Calculating linear regulator thermal dissipation P = (Vin - 5V) * Iload.",
+      "related_pins": ["Pin_VIN", "Pin_5V", "Comp_Regulator5V"],
+      "camera_target": [-2.2, 0.5, 1.4]
+    },
+    {
+      "id": "comp_capacitor_power1",
+      "mesh_name": "Comp_Capacitor_Power1",
+      "category": "filtering_capacitor",
+      "name_en": "47µF 16V SMT Aluminum Electrolytic Capacitor (Input Rail)",
+      "name_bn": "৪৭ মাইক্রোফ্যারাড ১৬ ভোল্ট ফিল্টার ক্যাপাসিটর (ইনপুট রেল)",
+      "subtitle_en": "Bulk Decoupling & Ripple Filter on Barrel Jack / VIN",
+      "subtitle_bn": "ইনপুট ভোল্টেজ রিপল ফিল্টারিং ও বাল্ক ডিকাপলিং ক্যাপাসিটর",
+      "function_en": "High-capacitance SMT aluminum cylindrical capacitor placed across the DC input barrel jack / VIN rail. Filters out AC ripple and transient voltage spikes from wall adapters before feeding the 5V linear regulator.",
+      "function_bn": "ব্যারেল জ্যাক এবং ভি-ইন ইনপুট লাইনের সাথে সমান্তরালে যুক্ত অ্যালুমিনিয়াম ক্যাপাসিটর। বাহ্যিক পাওয়ার সাপ্লাইয়ের নয়েজ এবং ভোল্টেজ স্পাইক দূর করে সুষম ডিসি ভোল্টেজ তৈরি করে।",
+      "quick_spec": "47 µF · 16V SMT Aluminum (Input Ripple Filter)",
+      "electrical": {
+        "capacitance": "47 µF (Microfarads)",
+        "rated_voltage": "16V DC max",
+        "package": "SMT Aluminum Cylindrical Can with Negative Black Stripe",
+        "tolerance": "±20%"
+      },
+      "syllabus_tags": ["Filtering", "Power Decoupling", "Analog Electronics"],
+      "course_context": "Power Electronics Lab: Low-pass filter RC time constant and ripple factor reduction.",
+      "related_pins": ["Comp_DC_BarrelJack", "Comp_Regulator5V", "Pin_VIN"],
+      "camera_target": [-1.5, 0.44, 1.25]
+    },
+    {
+      "id": "comp_capacitor_power2",
+      "mesh_name": "Comp_Capacitor_Power2",
+      "category": "filtering_capacitor",
+      "name_en": "47µF 16V SMT Aluminum Electrolytic Capacitor (5V Rail)",
+      "name_bn": "৪৭ মাইক্রোফ্যারাড ১৬ ভোল্ট ফিল্টার ক্যাপাসিটর (৫ ভোল্ট রেল)",
+      "subtitle_en": "Output Stability & Decoupling for 5V Regulated Rail",
+      "subtitle_bn": "৫ ভোল্ট আউটপুট লাইনের স্ট্যাবিলিটি ও লোড ফিল্টার ক্যাপাসিটর",
+      "function_en": "Connected directly to the output of the 5V linear regulator. Provides instantaneous current reserve during sudden digital switching spikes and prevents regulator oscillation.",
+      "function_bn": "৫ ভোল্ট লিনিয়ার রেগুলেটরের আউটপুটে সংযুক্ত ক্যাপাসিটর। মাইক্রোকন্ট্রোলার ও অন্যান্য সেন্সরের তাৎক্ষণিক কারেন্টের চাহিদা পূরণ করে এবং সিস্টেমকে রিস্টার্ট হওয়া থেকে রক্ষা করে।",
+      "quick_spec": "47 µF · 16V SMT Aluminum (5V Stability Filter)",
+      "electrical": {
+        "capacitance": "47 µF",
+        "rated_voltage": "16V DC",
+        "esr": "< 0.3 Ω",
+        "placement": "Parallel across 5V rail and GND"
+      },
+      "syllabus_tags": ["Power Regulation", "Decoupling", "Stability"],
+      "course_context": "Linear Regulator Design: Output capacitor Equivalent Series Resistance (ESR) requirements for LDO stability.",
+      "related_pins": ["Comp_Regulator5V", "Pin_5V", "Pin_GND1"],
+      "camera_target": [-0.65, 0.44, 1.25]
+    },
+    {
+      "id": "comp_icsp_main",
+      "mesh_name": "Comp_ICSP_Main",
+      "category": "programming_header",
+      "name_en": "ICSP Header for ATmega328P (In-Circuit Serial Programming)",
+      "name_bn": "প্রধান আইসিএসপি হেডার (ATmega328P প্রোগ্রামিং পোর্ট)",
+      "subtitle_en": "6-Pin SPI Header for Flashing Bootloaders & Firmware Directly",
+      "subtitle_bn": "৬-পিন এসপিআই হেডার (বুটলোডার ও সরাসরি ফার্মওয়্যার প্রোগ্রামিং)",
+      "function_en": "A 2x3 male pin header located on the right edge. Directly interfaces with the ATmega328P's hardware SPI pins (MISO, SCK, MOSI, RESET, VCC, GND). Used by external programmers (USBasp, Atmel-ICE, or another Arduino as ISP) to burn the bootloader or flash code without the USB-Serial chip.",
+      "function_bn": "বোর্ডের ডান প্রান্তে অবস্থিত ২x৩ মেল পিন হেডার। এটি সরাসরি ATmega328P এর এসপিআই (SPI) পিনের সাথে যুক্ত। ইউএসবি ছাড়াই সরাসরি বুটলোডার ফ্ল্যাশ বা ফার্মওয়্যার লোড করতে USBasp বা প্রোগ্রামার দিয়ে এটি ব্যবহার করা হয়।",
+      "quick_spec": "2×3 Gold Male Pins · ATmega328P Hardware SPI",
+      "electrical": {
+        "pin_1": "MISO (Master In Slave Out - Pin D12)",
+        "pin_2": "VCC (+5V Power)",
+        "pin_3": "SCK (Serial Clock - Pin D13)",
+        "pin_4": "MOSI (Master Out Slave In - Pin D11)",
+        "pin_5": "RESET (Active-Low Hardware Reset)",
+        "pin_6": "GND (Ground)"
+      },
+      "syllabus_tags": ["ICSP", "SPI Bus", "Bootloader Flashing", "Direct Firmware"],
+      "course_context": "Embedded Systems Lab: Burning Arduino Optiboot bootloader onto blank virgin ATmega328P chips using SPI in-circuit programming.",
+      "related_pins": ["Pin_D11", "Pin_D12", "Pin_D13", "Chip_ATMEGA328P"],
+      "camera_target": [2.6, 0.5, 0.0]
+    },
+    {
+      "id": "comp_icsp_usb",
+      "mesh_name": "Comp_ICSP_USB",
+      "category": "programming_header",
+      "name_en": "ICSP Header for USB Interface (ATmega16U2 DFU Header)",
+      "name_bn": "ইউএসবি ইন্টারফেস আইসিএসপি হেডার (ATmega16U2 DFU পোর্ট)",
+      "subtitle_en": "6-Pin Header for Updating USB-Serial Controller Firmware",
+      "subtitle_bn": "ইউএসবি-টু-সিরিয়াল কন্ট্রোলারের ফার্মওয়্যার বা DFU প্রোগ্রামিং হেডার",
+      "function_en": "A 2x3 pin header located near the USB port and reset button. Connects directly to the auxiliary ATmega16U2 microcontroller. Allows reprogramming the 16U2 into custom USB devices such as MIDI controllers, USB HID keyboards, or joysticks via DFU (Device Firmware Upgrade) mode.",
+      "function_bn": "ইউএসবি পোর্ট এবং রিসেট সুইচের মাঝে অবস্থিত ২x৩ পিন হেডার। এটি সহায়ক ATmega16U2 চিপের সাথে যুক্ত। এর মাধ্যমে 16U2 চিপকে কাস্টম ইউএসবি কীবোর্ড, মাউস বা মিডি কন্ট্রোলার হিসেবে রূপান্তর করতে ডিএফইউ মোডে ফ্ল্যাশ করা যায়।",
+      "quick_spec": "2×3 Gold Male Pins · ATmega16U2 USB DFU SPI",
+      "electrical": {
+        "interface": "SPI for ATmega16U2",
+        "pinout": "MISO, 5V, SCK, MOSI, RESET, GND",
+        "firmware_mode": "USB DFU (Device Firmware Upgrade) Class"
+      },
+      "syllabus_tags": ["USB HID", "ICSP", "DFU Mode", "Peripherals"],
+      "course_context": "Advanced Embedded Projects: Transforming Arduino into a USB Human Interface Device (HID) keyboard/mouse using custom 16U2 firmware.",
+      "related_pins": ["Comp_USB_TypeB", "Comp_Chip_16U2"],
+      "camera_target": [-1.2, 0.35, -1.60]
+    },
+    {
+      "id": "comp_polyfuse",
+      "mesh_name": "Comp_Polyfuse",
+      "category": "protection",
+      "name_en": "500mA PTC Resettable Gold Polyfuse",
+      "name_bn": "৫০০ মিলিঅ্যাম্পিয়ার পিটিসি রিসেটেবল গোল্ড পলিফিউজ",
+      "subtitle_en": "Overcurrent Protection for Host Computer USB Ports",
+      "subtitle_bn": "কম্পিউটারের ইউএসবি পোর্টের ওভার-কারেন্ট শর্ট-সার্কিট সুরক্ষা ফিউজ",
+      "function_en": "A surface-mount gold rectangular PTC (Positive Temperature Coefficient) polymer fuse located beside the USB connector. If breadboard circuits accidentally short-circuit and draw more than 500mA from your computer's USB port, the polyfuse heats up and trips open, protecting your computer's motherboard from burning out.",
+      "function_bn": "ইউএসবি পোর্টের পাশে অবস্থিত সোনালী আয়তাকার পিটিসি রিসেটেবল ফিউজ। ব্রেডবোর্ডে ভুল সংযোগে ৫০০ মিলিঅ্যাম্পিয়ারের বেশি কারেন্ট প্রবাহিত হলে এটি উত্তপ্ত হয়ে স্বয়ংক্রিয়ভাবে সার্কিট বিচ্ছিন্ন করে কম্পিউটারকে রক্ষা করে।",
+      "quick_spec": "500mA Hold / 1A Trip · Self-Resetting PTC (501K)",
+      "electrical": {
+        "trip_current": "500 mA hold / 1.0 A trip",
+        "action": "Self-resetting once cooled down and short-circuit is removed",
+        "package": "SMD Gold Polyfuse (labeled 501K)"
+      },
+      "syllabus_tags": ["Safety Systems", "Short-Circuit Protection", "Current Limits"],
+      "course_context": "Electrical Safety in Engineering Labs: Preventing catastrophic over-current damage to university lab computers.",
+      "related_pins": ["Comp_USB_TypeB", "Pin_5V"],
+      "camera_target": [-1.8, 0.3, -0.9]
+    },
+    {
+      "id": "comp_chip_16u2",
+      "mesh_name": "Comp_Chip_16U2",
+      "category": "sub_mcu",
+      "name_en": "ATmega16U2 USB-to-Serial Converter IC",
+      "name_bn": "ATmega16U2 ইউএসবি-টু-সিরিয়াল কনভার্টার চিপ",
+      "subtitle_en": "Dedicated USB 2.0 Full-Speed Hardware Bridge",
+      "subtitle_bn": "নিবেদিত ইউএসবি ২.০ ফুল-স্পিড হার্ডওয়্যার ব্রিজ প্রসেসর",
+      "function_en": "A 32-pin QFP microcontroller programmed with USB-to-Serial firmware. Translates USB packets from your computer's operating system into standard TTL serial UART pulses on Pins 0 (RX) and 1 (TX) for the main ATmega328P.",
+      "function_bn": "ইউএসবি পোর্টের কাছে অবস্থিত ৩২-পিন এসটিএম কিউএফপি চিপ। কম্পিউটারের ইউএসবি সিগন্যালকে টিটিএল সিরিয়াল ইউএআরটি (UART) সিগন্যালে রূপান্তর করে মূল প্রসেসরকে কোড লোড ও যোগাযোগে সাহায্য করে।",
+      "quick_spec": "32-pin QFN AVR · 16 MHz USB-to-UART Bridge",
+      "electrical": {
+        "architecture": "8-bit AVR with Native USB 2.0 Engine",
+        "clock": "16 MHz Ceramic Resonator",
+        "package": "QFN/QFP-32 Surface Mount"
+      },
+      "syllabus_tags": ["USB Protocol", "UART Bridge", "Serial Communication"],
+      "course_context": "System Interfacing: DTR line capacitor coupling generating hardware auto-reset for Optiboot flashing.",
+      "related_pins": ["Comp_USB_TypeB", "Pin_D0", "Pin_D1"],
+      "camera_target": [-1.2, 0.3, -0.85]
+    },
+    {
+      "id": "comp_regulator_5v",
+      "mesh_name": "Comp_Regulator5V",
+      "category": "power_regulation",
+      "name_en": "5V Linear Voltage Regulator (AMS1117 / NCP1117ST50)",
+      "name_bn": "৫ ভোল্ট লিনিয়ার ভোল্টেজ রেগুলেটর আইসি (NCP1117 / AMS1117)",
+      "subtitle_en": "SOT-223 Low-Dropout 5.0V Voltage Step-Down IC",
+      "subtitle_bn": "এসওটি-২২৩ প্যাকেজ লো-ড্রপআউট ৫.০ ভোল্ট ভোল্টেজ রেগুলেটর",
+      "function_en": "Steps down unregulated 7V-12V external power from the DC barrel jack or VIN pin down to a rock-solid, low-noise 5.0V with up to 800mA current capacity. Its large metal heatsink tab is soldered to the PCB copper plane for thermal dissipation.",
+      "function_bn": "ব্যারেল জ্যাক বা ভি-ইন পিনের ৭-১২ ভোল্ট বিদ্যুৎকে নিখুঁত ও স্থিতিশীল ৫.০ ভোল্টে নামিয়ে এনে মাইক্রোকন্ট্রোলার ও অন্যান্য সেন্সরে সরবরাহ করে। এর মেটালিক হিটসিঙ্ক ট্যাব অতিরিক্ত তাপকে পিসিবিতে ছড়িয়ে দেয়।",
+      "quick_spec": "5.0V Fixed LDO · 800mA max (SOT-223)",
+      "electrical": {
+        "output_voltage": "5.0V fixed ±1%",
+        "max_current": "800 mA continuous (thermally limited)",
+        "dropout_voltage": "1.15V at 800mA",
+        "package": "SOT-223 with Heavy Solder Heatsink Tab"
+      },
+      "syllabus_tags": ["Power Regulation", "Thermal Management", "LDO"],
+      "course_context": "Power Electronics: Calculating linear regulator thermal heatsinking and junction temperatures.",
+      "related_pins": ["Comp_DC_BarrelJack", "Comp_Capacitor_Power1", "Comp_Capacitor_Power2", "Pin_5V"],
+      "camera_target": [-1.1, 0.4, 0.8]
+    },
+    {
+      "id": "comp_crystal_16mhz",
+      "mesh_name": "Comp_Crystal16MHz",
+      "category": "clock_oscillator",
+      "name_en": "16.000 MHz Quartz Crystal Oscillator (SPK 16.000G)",
+      "name_bn": "১৬.০০০ মেগাহার্টজ কোয়ার্টজ ক্রিস্টাল অসিলেটর (SPK16.000G)",
+      "subtitle_en": "HC-49 Metallic Master CPU Heartbeat Resonator",
+      "subtitle_bn": "এইচসি-৪৯ মেটালিক প্যাকেজ কোয়ার্টজ ক্রিস্টাল অসিলেটর",
+      "function_en": "Generates the precision 16,000,000 Hz master system clock heartbeat for the ATmega328P CPU. Tied to pins XTAL1 and XTAL2 with dual 22pF load capacitors to maintain precise baud rates, timer ticks, and millis() timing.",
+      "function_bn": "সিপিইউ এবং টাইমারগুলোর জন্য সুনির্দিষ্ট ১৬,০০০,০০০ হার্টজ মাস্টার ক্লক পালস তৈরি করে। সঠিক টাইমিং ও সিরিয়াল বড রেট বজায় রাখতে এটি অপরিহার্য।",
+      "quick_spec": "16.000000 MHz Quartz · ±30 ppm Precision",
+      "electrical": {
+        "frequency": "16.000000 MHz",
+        "package": "HC-49 Low-Profile Metallic Can",
+        "load_capacitance": "22 pF to ground"
+      },
+      "syllabus_tags": ["Clock Signal", "Piezoelectric", "Timing Accuracy"],
+      "course_context": "Digital Electronics: Pierce oscillator circuit and piezoelectric crystal resonance stability.",
+      "related_pins": ["Chip_ATMEGA328P"],
+      "camera_target": [-0.4, 0.4, 0.2]
+    },
+    {
+      "id": "comp_reset_button",
+      "mesh_name": "Comp_ResetButton",
+      "category": "tactile_switch",
+      "name_en": "Tactile Reset Pushbutton",
+      "name_bn": "ট্যাকটাইল রিসেট পুশবাটন সুইচ",
+      "subtitle_en": "Hardware Active-Low CPU Reset Momentary Switch",
+      "subtitle_bn": "হার্ডওয়্যার অ্যাক্টিভ-লো সিপিইউ রিসেট সুইচ",
+      "function_en": "Momentarily pulls the active-low RESET pin of the ATmega328P to 0V (GND), causing the Program Counter (PC) to reset to 0x0000 and restarting program execution from the beginning.",
+      "function_bn": "চাপ দিলে প্রসেসরের অ্যাক্টিভ-লো RESET পিনকে ০ ভোল্ট বা গ্রাউন্ডে নামিয়ে আনে, যার ফলে প্রোগ্রাম প্রথম থেকে পুনরায় চালু হয়।",
+      "quick_spec": "Active-Low SPST Momentary Tactile Switch",
+      "electrical": {
+        "type": "Momentary SPST Tactile Switch",
+        "rating": "50 mA at 12V DC",
+        "active_level": "Active LOW (0V)"
+      },
+      "syllabus_tags": ["Reset Logic", "Program Counter", "Debugging"],
+      "course_context": "Computer Architecture: Hardware reset vectors and bootloader re-initialization.",
+      "related_pins": ["Chip_ATMEGA328P", "Pin_RESET_P"],
+      "camera_target": [-2.7, 0.4, -2.1]
+    },
+    {
+      "id": "comp_diode_m7",
+      "mesh_name": "Comp_Diode_M7",
+      "category": "protection_diode",
+      "name_en": "M7 Reverse-Polarity Protection Diode (1A 1000V)",
+      "name_bn": "এম৭ রিভার্স-পোলারিটি সুরক্ষা ডায়োড (১ অ্যাম্পিয়ার ১০০০ ভোল্ট)",
+      "subtitle_en": "Prevents Reverse Polarity Damage from DC Barrel Jack",
+      "subtitle_bn": "ডিসি ব্যারেল জ্যাকের বিপরীত পোলারিটি থেকে সার্কিট সুরক্ষা",
+      "function_en": "A surface-mount general-purpose rectifier diode (SMA package labeled M7, 1N4007 equivalent). Placed in series with the 2.1mm DC barrel jack input to block reverse polarity voltages if an incorrect negative-center power adapter is plugged in.",
+      "function_bn": "ব্যারেল জ্যাক ইনপুটের সাথে সিরিজে সংযুক্ত এসএমডি রেকটিফায়ার ডায়োড (১এন৪০০৭ সমতুল্য)। ভুল করে বিপরীত পোলারিটির অ্যাডাপ্টার লাগালে এটি বিদ্যুৎ প্রবাহ বন্ধ করে পুরো আর্ডুইনো বোর্ডকে পুড়ে যাওয়া থেকে রক্ষা করে।",
+      "quick_spec": "1A · 1000V SMA Rectifier Diode (M7)",
+      "electrical": {
+        "forward_current": "1.0 A continuous",
+        "peak_reverse_voltage": "1000 V",
+        "forward_voltage_drop": "1.1V at 1A",
+        "package": "DO-214AC / SMA Surface Mount"
+      },
+      "syllabus_tags": ["Diode Rectification", "Reverse Polarity", "Circuit Protection"],
+      "course_context": "Basic Electronics Lab: PN junction diode forward bias threshold and reverse breakdown protection.",
+      "related_pins": ["Comp_DC_BarrelJack", "Comp_Regulator5V", "Pin_VIN"],
+      "camera_target": [-1.7, 0.3, 1.8]
+    },
+    {
+      "id": "comp_opamp_lm358",
+      "mesh_name": "Comp_OpAmp_LM358",
+      "category": "dual_opamp",
+      "name_en": "LM358 Dual Operational Amplifier IC",
+      "name_bn": "এলএম৩৫৮ ডুয়াল অপারেশনাল অ্যামপ্লিফায়ার আইসি",
+      "subtitle_en": "Auto Power Source Selection & Pin 13 LED High-Impedance Driver",
+      "subtitle_bn": "অটো পাওয়ার সিলেকশন ও পিন ১৩ এলইডি ড্রাইভার সার্কিট",
+      "function_en": "An 8-pin SOIC dual operational amplifier. Half-A acts as a voltage comparator comparing DC barrel jack voltage against 3.3V to automatically disconnect USB 5V when external DC power is present. Half-B acts as a high-impedance voltage follower buffer driving the onboard 'L' LED so Pin D13 is not loaded down when used in user circuits.",
+      "function_bn": "৮-পিনের ডুয়াল অপ-অ্যাম্প আইসি। একটি অংশ ভোল্টেজ কম্পারেটর হিসেবে কাজ করে স্বয়ংক্রিয়ভাবে ইউএসবি ও ব্যারেল জ্যাকের মধ্যে পাওয়ার সুইচ করে। অপর অংশটি হাই-ইম্পিডেন্স বাফার হিসেবে পিন ১৩-এর 'L' এলইডি ড্রাইভ করে, যাতে পিন ১৩-এ সেন্সর ব্যবহারে কোনো লোডিং প্রভাব না পড়ে।",
+      "quick_spec": "Dual Op-Amp (Power Comparator & Pin 13 Driver)",
+      "electrical": {
+        "supply_range": "3V to 32V single supply",
+        "comparator_threshold": "6.6V on VIN (3.3V comparison via 2x divider)",
+        "package": "SOIC-8 Surface Mount"
+      },
+      "syllabus_tags": ["Operational Amplifiers", "Voltage Comparator", "Buffer Amplifier"],
+      "course_context": "Linear Integrated Circuits: Op-Amp comparator mode and voltage follower buffer isolating load impedance.",
+      "related_pins": ["Pin_D13", "Comp_USB_TypeB", "Comp_DC_BarrelJack"],
+      "camera_target": [-0.6, 0.3, -0.4]
+    },
+    {
+      "id": "chip_atmega328p",
+      "mesh_name": "Chip_ATMEGA328P",
+      "category": "main_mcu",
+      "name_en": "ATmega328P Microcontroller & Memory",
+      "name_bn": "ATmega328P মাইক্রোকন্ট্রোলার ও মেমরি আর্কিটেকচার",
+      "subtitle_en": "32 KB Flash (0.5 KB Bootloader) · 2 KB SRAM · 1 KB EEPROM",
+      "subtitle_bn": "৩২ কেবি ফ্ল্যাশ (০.৫ কেবি বুটলোডার) · ২ কেবি এস-র‌্যাম · ১ কেবি ইইপ্রম",
+      "function_en": "Memory: The memory of an ATmega328 microcontroller includes 32 KB and 0.5 KB memory is utilized for the Boot loader), and also it includes SRAM-2 KB as well as EEPROM-1KB. Functions as the 8-bit RISC processing core executing instructions at 16MHz.",
+      "function_bn": "মেমরি: এটিমেগা৩২৮ মাইক্রোকন্ট্রোলারের মেমরিতে রয়েছে ৩২ কেবি ফ্ল্যাশ মেমরি (যার মধ্যে ০.৫ কেবি মেমরি বুটলোডারের জন্য ব্যবহৃত হয়), ২ কেবি এস-র‌্যাম (SRAM) এবং ১ কেবি ইইপ্রম (EEPROM)।",
+      "quick_spec": "32KB Flash (0.5KB Bootloader) · 2KB SRAM · 1KB EEPROM · 16MHz",
+      "electrical": {
+        "flash_memory": "32 KB total (0.5 KB reserved for Optiboot bootloader)",
+        "sram": "2 KB internal SRAM",
+        "eeprom": "1 KB non-volatile EEPROM",
+        "operating_voltage": "5.0V DC",
+        "clock_speed": "16.000 MHz",
+        "digital_io_pins": "14 Digital Pins (Pins 0 to 13, 6 PWM channels)"
+      },
+      "syllabus_tags": ["Memory Architecture", "Flash 32KB", "SRAM 2KB", "EEPROM 1KB", "Bootloader"],
+      "course_context": "Microcontroller Architecture: Memory mapping of Flash program memory, static RAM data segments, and EEPROM.",
+      "related_pins": ["Comp_Crystal16MHz", "Comp_ICSP_Main", "Pin_D13"],
+      "camera_target": [0.7, 0.4, 0.4]
+    },
+    {
+      "id": "die_flash_32kb",
+      "mesh_name": "Die_Flash_32KB",
+      "category": "silicon_die",
+      "name_en": "32 KB Flash Program Memory Die",
+      "name_bn": "৩২ কেবি ফ্ল্যাশ প্রোগ্রাম মেমরি ডাই",
+      "subtitle_en": "Non-Volatile In-System Flash (10,000 Cycles) · 0.5KB Bootloader",
+      "subtitle_bn": "নন-ভোলাটাইল ফ্ল্যাশ মেমরি (১০,০০০ রাইট সাইকেল) · ০.৫ কেবি বুটলোডার",
+      "function_en": "High-density floating-gate non-volatile Flash array occupying 32 KB. Holds compiled AVR machine code instructions. Includes 0.5 KB bootloader section (Optiboot) at top memory space (0x7E00 - 0x7FFF) which allows flashing sketches without external programmer hardware.",
+      "function_bn": "৩২ কিলোবাইটের নন-ভোলাটাইল ফ্ল্যাশ মেমরি ব্লক যা ব্যবহারকারীর কম্পাইল করা সি/সি++ প্রোগ্রাম সংরক্ষণ করে। বিদ্যুৎ চলে গেলেও ডেটা মুছে যায় না। এর মধ্যে ০.৫ কেবি অপটিবুট বুটলোডারের জন্য সংরক্ষিত থাকে।",
+      "quick_spec": "32 KB Flash · 0.5 KB Bootloader · 10K Cycles",
+      "electrical": {
+        "capacity": "32,768 Bytes (16K x 16 words)",
+        "endurance": "10,000 write/erase cycles minimum",
+        "retention": "20 years at 85°C / 100 years at 25°C",
+        "bootloader_section": "512 Bytes (256 Words) at 0x7E00 - 0x7FFF",
+        "page_size": "64 words (128 bytes) per page"
+      },
+      "syllabus_tags": ["Flash Memory", "Non-Volatile", "Bootloader", "Program Counter"],
+      "course_context": "Microcontroller Architecture: Flash program memory organization, instruction fetching, and vector table at 0x0000.",
+      "related_pins": ["Die_ALU_Core", "Die_SRAM_2KB", "Chip_ATMEGA328P", "Comp_ICSP_Main"],
+      "camera_target": [0.0, 0.4, 0.4]
+    },
+    {
+      "id": "die_alu_core",
+      "mesh_name": "Die_ALU_Core",
+      "category": "silicon_die",
+      "name_en": "8-Bit AVR RISC ALU & CPU Execution Core",
+      "name_bn": "৮-বিট এভিআর রিস্ক এএলইউ ও এক্সিকিউশন কোর",
+      "subtitle_en": "Arithmetic Logic Unit & 32x8 General Purpose Registers",
+      "subtitle_bn": "অ্যারিথমেটিক লজিক ইউনিট এবং ৩২টি ৮-বিট জেনারেল রেজিস্টার",
+      "function_en": "The computational brain of the ATmega328P. Executes single-cycle 16MHz instructions directly connected to 32 general-purpose 8-bit working registers (R0-R31). Performs arithmetic (+, -, *), bitwise logic (AND, OR, XOR), and branch comparisons with zero-cycle register access overhead.",
+      "function_bn": "এটিমেগা৩২৮পি এর মূল প্রসেসিং কোর। ১৬ মেগাহার্টজে প্রতি সেকেন্ডে ১৬ মিলিয়ন নির্দেশ (MIPS) কার্যকর করতে পারে। সরাসরি ৩২টি জেনারেল পারপাস রেজিস্টারের সাথে যুক্ত থেকে গানিতিক ও যুক্তিভিত্তিক কাজ সম্পন্ন করে।",
+      "quick_spec": "8-Bit RISC · 16 MIPS at 16 MHz · 32 GP Registers",
+      "electrical": {
+        "throughput": "Up to 16 MIPS at 16 MHz clock",
+        "working_registers": "32 x 8-bit General Purpose Registers (R0-R31)",
+        "hardware_multiplier": "2-cycle hardware multiply (mul, muls, mulsu)",
+        "pipelining": "Single-level instruction fetch and execute overlap"
+      },
+      "syllabus_tags": ["ALU", "AVR RISC", "Registers", "Execution Unit"],
+      "course_context": "Microprocessors & Interfacing: Pipelined fetch-decode-execute cycle and ALU flag register status (SREG).",
+      "related_pins": ["Die_Flash_32KB", "Die_SRAM_2KB", "Comp_Crystal16MHz"],
+      "camera_target": [0.9, 0.4, 0.25]
+    },
+    {
+      "id": "die_sram_2kb",
+      "mesh_name": "Die_SRAM_2KB",
+      "category": "silicon_die",
+      "name_en": "2 KB Static RAM (SRAM Working Memory)",
+      "name_bn": "২ কেবি স্ট্যাটিক র‌্যাম (SRAM ওয়ার্কিং মেমরি)",
+      "subtitle_en": "Runtime Stack, Global Variables & Heap Storage",
+      "subtitle_bn": "রানটাইম স্ট্যাক, ভ্যারিয়েবল ও ডায়নামিক মেমরি",
+      "function_en": "Fast static random-access memory (2048 bytes). Organizes runtime execution data: static data segment (.data), uninitialized variables (.bss), dynamic heap allocations (malloc), and the call stack growing downwards for function returns and interrupt calls.",
+      "function_bn": "দ্রুতগতির ২০৪৮ বাইট স্ট্যাটিক র্যান্ডম অ্যাক্সেস মেমরি। প্রোগ্রাম চলাকালীন ভ্যারিয়েবল, অ্যারে এবং ফাংশন কলের রিটার্ন অ্যাড্রেস (স্ট্যাক) সাময়িকভাবে ধরে রাখতে কাজ করে।",
+      "quick_spec": "2,048 Bytes (2 KB) · Single-Cycle Fast SRAM",
+      "electrical": {
+        "capacity": "2,048 Bytes (2 KB)",
+        "memory_type": "Volatile Static CMOS 6T RAM",
+        "address_range": "0x0100 - 0x08FF (Data space)",
+        "stack_pointer": "16-bit SP pointing to RAMEND (0x08FF)"
+      },
+      "syllabus_tags": ["SRAM", "Call Stack", "Heap Storage", "Variables"],
+      "course_context": "Embedded Systems Lab: Stack pointer behavior, local vs global variables, and detecting low-memory heap collisions.",
+      "related_pins": ["Die_ALU_Core", "Die_Flash_32KB", "Chip_ATMEGA328P"],
+      "camera_target": [0.9, 0.4, 0.55]
+    },
+    {
+      "id": "die_peripherals",
+      "mesh_name": "Die_Peripherals",
+      "category": "silicon_die",
+      "name_en": "On-Chip Peripherals, Timers & Bus Controller",
+      "name_bn": "অন-চিপ পেরিফেরাল, টাইমার ও বাস কন্roller",
+      "subtitle_en": "Hardware Timers (0, 1, 2), USART, SPI, I2C, Watchdog",
+      "subtitle_bn": "হার্ডওয়্যার টাইমার, ইউএসএআরটি, এসপিআই ও আইটুসি বাস কন্ট্রোলার",
+      "function_en": "Silicon region dedicated to integrated hardware sub-modules: Timer/Counters (8-bit Timer0/2, 16-bit Timer1), 6-channel PWM generators, USART serial engine, Master/Slave SPI controller, I2C Two-Wire Interface, and Watchdog Timer.",
+      "function_bn": "মাইক্রোকন্ট্রোলারের অভ্যন্তরীণ পেরিফেরাল ইঞ্জিন। এতে রয়েছে ৩টি টাইমার/কাউন্টার, পিডব্লিউএম পালস জেনারেটর, এসপিআই ও আইটুসি বাস কন্ট্রোলার এবং ওয়াচডগ টাইমার।",
+      "quick_spec": "Timers (0/1/2) · PWM Engine · USART · SPI · I2C TWI",
+      "electrical": {
+        "timers": "2x 8-bit Timer/Counters, 1x 16-bit Timer/Counter",
+        "pwm_channels": "6 hardware PWM channels",
+        "interfaces": "Master/Slave SPI, Byte-oriented 2-wire (I2C), USART",
+        "watchdog": "Programmable Watchdog with Separate On-chip Oscillator"
+      },
+      "syllabus_tags": ["Timers", "PWM Engine", "Hardware UART", "SPI Controller"],
+      "course_context": "Embedded Interfacing: Timer prescaling, output compare registers (OCR), and interrupt service routines.",
+      "related_pins": ["Pin_D3", "Pin_D5", "Pin_D6", "Pin_D9", "Pin_D10", "Pin_D11"],
+      "camera_target": [1.6, 0.4, 0.4]
+    },
+    {
+      "id": "comp_internal_copper",
+      "mesh_name": "Comp_Internal_Copper",
+      "category": "pcb_internal",
+      "name_en": "Internal Multi-Layer Copper Plane (Power / Ground)",
+      "name_bn": "অভ্যন্তরীণ মাল্টি-লেয়ার কপার পাওয়ার ও গ্রাউন্ড প্লেন",
+      "subtitle_en": "Embedded 5V Power Rail & Low-Impedance Ground Return",
+      "subtitle_bn": "বোর্ডের অভ্যন্তরে ৫ ভোল্ট ও গ্রাউন্ড ডিস্ট্রিবিউশন কপার লেয়ার",
+      "function_en": "The internal copper plane embedded within the FR4 fiberglass substrate. Distributes stable +5V power and solid Ground return paths across the entire board without requiring complex surface wire crossings. Reduces electrical noise and improves thermal dissipation.",
+      "function_bn": "এফআর৪ ফাইবারগ্লাস বোর্ডের ভেতরে স্যান্ডউইচ করা ভেতরের কপার লেয়ার। সারফেসের ওপর দিয়ে তার না টেনে পুরো বোর্ডে ৫ ভোল্ট ও গ্রাউন্ড সরবরাহ করে এবং সিগন্যালের নয়েজ দূর করতে শিল্ড হিসেবে কাজ করে।",
+      "quick_spec": "Multi-Layer FR4 · Embedded Power/GND Plane",
+      "electrical": {
+        "layer_type": "Embedded internal copper plane",
+        "substrate": "FR4 Epoxy-Glass Dielectric",
+        "thickness": "1 oz copper (approx 35 µm)",
+        "functions": "Low-impedance ground return and power distribution"
+      },
+      "syllabus_tags": ["PCB Design", "Ground Plane", "Multi-Layer", "EMI Shielding"],
+      "course_context": "PCB Design & Fabrication: Power plane capacitance and return current loop minimization.",
+      "related_pins": ["Pin_5V", "Pin_GND1", "Pin_GND2"],
+      "camera_target": [0.0, 0.2, 0.0]
+    },
+    {
+      "id": "pin_d13",
+      "mesh_name": "Pin_D13",
+      "category": "digital_pin",
+      "name_en": "Digital Pin 13 / SCK (Built-in LED)",
+      "name_bn": "ডিজিটাল পিন ১৩ / এসসিকে (অনবোর্ড এলইডি)",
+      "subtitle_en": "Inbuilt LED · SPI SCK Clock · 14-Digital I/O (5V, 20mA, 40mA max)",
+      "subtitle_bn": "অনবোর্ড এলইডি · এসপিআই এসসিকে ক্লক · ১৪-ডিজিটাল I/O",
+      "function_en": "LED Pin: An Arduino board is inbuilt with a LED using digital pin-13. Whenever the digital pin is high, the LED will glow otherwise it will not glow.\n\nSPI Pins: SCK (Pin13) - The CLK pulse synchronizes data transmission that is generated by the master. Equivalent pins with the SPI library is employed for the communication of SPI.\n\nInput and Output: 14 digital pins can operate with 5V, give or receive 20mA, include 20k to 50k ohm pull up resistor, with 40mA maximum limit using pinMode(), digitalRead(), and digitalWrite().",
+      "function_bn": "এলইডি পিন: আর্ডুইনো বোর্ডে ডিজিটাল পিন-১৩ এর সাথে একটি অনবোর্ড এলইডি যুক্ত থাকে। ডিজিটাল পিন হাই (HIGH) হলে এলইডি জ্বলে এবং লো (LOW) হলে নিভে থাকে। এছাড়া এটি এসপিআই বাসের SCK (সিরিয়াল ক্লক) লাইন হিসেবে কাজ করে।",
+      "electrical": {
+        "logic_level": "5V DC",
+        "nominal_current": "20 mA give or receive",
+        "maximum_limit": "40 mA absolute max limit",
+        "internal_pullup": "20k to 50k ohm pull up resistor",
+        "functions": "pinMode(), digitalRead(), digitalWrite()"
+      },
+      "syllabus_tags": ["LED Pin 13", "SPI SCK", "Digital I/O", "analogWrite()"],
+      "course_context": "First Laboratory Exercise: LED blinking control and master SPI bus clock synchronization.",
+      "related_pins": ["Pin_D12", "Pin_D11", "Comp_ICSP_Main"],
+      "camera_target": [-1.35, 0.4, -2.15]
+    },
+    {
+      "id": "pin_d12",
+      "mesh_name": "Pin_D12",
+      "category": "digital_pin",
+      "name_en": "Digital Pin 12 / MISO (Master In Slave Out)",
+      "name_bn": "ডিজিটাল পিন ১২ / মিসো (MISO)",
+      "subtitle_en": "SPI MISO · Serial CLK Sync Pulse · 5V, 20mA, 40mA max",
+      "subtitle_bn": "এসপিআই মিসো লাইন · ডেটা ট্রান্সমিশন সিঙ্ক",
+      "function_en": "SPI Pins: MISO (Pin12) - This pin is a serial CLK, and the CLK pulse will synchronize the transmission of which is produced by the master. Maintains SPI communication with the help of the SPI library.\n\nInput and Output: Operates with 5V, gives or receives 20mA, includes 20k to 50k ohm pull up resistor, and 40mA maximum current limit using pinMode(), digitalRead(), and digitalWrite().",
+      "function_bn": "এসপিআই পিন: মিসো (Pin 12) - এটি এসপিআই বাসের মাস্টার ইন স্লেভ আউট লাইন। মাস্টার কর্তৃক উৎপাদিত ক্লক পালস ডেটা স্থানান্তরে সমলয় রক্ষা করে।",
+      "electrical": {
+        "logic_level": "5V DC",
+        "nominal_current": "20 mA",
+        "maximum_limit": "40 mA max",
+        "alternate_functions": ["MISO (SPI)", "PCINT4"]
+      },
+      "syllabus_tags": ["SPI Pins", "MISO (Pin 12)", "Digital I/O"],
+      "course_context": "SPI Bus: Reading telemetry from peripheral slave sensors via MISO line.",
+      "related_pins": ["Pin_D11", "Pin_D13", "Comp_ICSP_Main"],
+      "camera_target": [-1.1, 0.4, -2.15]
+    },
+    {
+      "id": "pin_d11",
+      "mesh_name": "Pin_D11",
+      "category": "digital_pin",
+      "name_en": "Digital Pin 11 / MOSI / PWM~",
+      "name_bn": "ডিজিটাল পিন ১১ / মোসি (MOSI) / পিডব্লিউএম~",
+      "subtitle_en": "SPI MOSI (Transmit to Devices) · 8-bit PWM analogWrite()",
+      "subtitle_bn": "মাস্টার আউট স্লেভ ইন · ৮-বিট পিডব্লিউএম analogWrite()",
+      "function_en": "SPI Pins: MOSI (Pin11) - This is the master out slave in the pin, used to transmit the data to the devices. Maintains SPI communication with the help of the SPI library.\n\nPWM Pins: Pin 11 is one of the PWM pins (3, 5, 6, 9, 10, & 11) giving an output of an 8-bit PWM with the function analogWrite().\n\nInput and Output: Operates with 5V, gives or receives 20mA, 20k-50k ohm pullup, 40mA maximum current limit using pinMode(), digitalRead(), digitalWrite().",
+      "function_bn": "এসপিআই পিন: মোসি (Pin 11) - এটি মাস্টার আউট স্লেভ ইন পিন যা পেরিফেরাল ডিভাইসে ডেটা প্রেরণ করতে ব্যবহৃত হয়। এছাড়া এটি ৮-বিট পিডব্লিউএম পিন হিসেবে analogWrite() ফাংশনে আউটপুট প্রদান করে।",
+      "electrical": {
+        "logic_level": "5V DC",
+        "pwm_resolution": "8-bit PWM via analogWrite()",
+        "nominal_current": "20 mA",
+        "max_limit": "40 mA max"
+      },
+      "syllabus_tags": ["MOSI (Pin 11)", "PWM Pins", "SPI Pins", "analogWrite()"],
+      "course_context": "SPI Master Transmitter & PWM: Sending commands to display controllers and modulating DC motor speed.",
+      "related_pins": ["Pin_D12", "Pin_D13", "Comp_ICSP_Main"],
+      "camera_target": [-0.85, 0.4, -2.15]
+    },
+    {
+      "id": "pin_d10",
+      "mesh_name": "Pin_D10",
+      "category": "digital_pin",
+      "name_en": "Digital Pin 10 / SS / PWM~",
+      "name_bn": "ডিজিটাল পিন ১০ / এসএস (SS) / পিডব্লিউএম~",
+      "subtitle_en": "SPI SS (Slave Select) · 8-bit PWM analogWrite() · 5V, 20mA, 40mA max",
+      "subtitle_bn": "এসপিআই স্লেভ সিলেক্ট · ৮-বিট পিডব্লিউএম analogWrite()",
+      "function_en": "SPI (Serial Peripheral Interface) Pins: The SPI pins are 10, 11, 12, 13 namely SS, MOSI, MISO, SCK, and these will maintain the SPI communication with the help of the SPI library. Pin 10 functions as SS (Slave Select).\n\nPWM Pins: The PWM pins of an Arduino are 3, 5, 6, 9, 10, & 11, and gives an output of an 8-bit PWM with the function analogWrite().\n\nInput and Output: Operates with 5V, gives or receives 20mA, includes 20k to 50k ohm pull up resistor, and 40mA maximum limit using pinMode(), digitalRead(), digitalWrite().",
+      "function_bn": "এসপিআই পিন: পিন ১০ হলো স্লেভ সিলেক্ট (SS)। এটি এসপিআই লাইব্রেরির মাধ্যমে যোগাযোগ বজায় রাখে। এছাড়া পিন ১০ একটি ৮-বিট পিডব্লিউএম পিন হিসেবে analogWrite() ফাংশনে কাজ করে।",
+      "electrical": {
+        "logic_level": "5V DC",
+        "pwm_resolution": "8-bit PWM (analogWrite)",
+        "nominal_current": "20 mA",
+        "maximum_limit": "40 mA max",
+        "alternate_functions": ["SS (SPI)", "OC1B"]
+      },
+      "syllabus_tags": ["SPI SS", "PWM Pins", "analogWrite()", "Digital I/O"],
+      "course_context": "Embedded Systems: Selecting peripheral chips via active-low chip select signals.",
+      "related_pins": ["Pin_D11", "Pin_D12", "Pin_D13"],
+      "camera_target": [-0.6, 0.4, -2.15]
+    },
+    {
+      "id": "pin_d9",
+      "mesh_name": "Pin_D9",
+      "category": "digital_pin",
+      "name_en": "Digital Pin 9 / PWM~",
+      "name_bn": "ডিজিটাল পিন ৯ / পিডব্লিউএম~",
+      "subtitle_en": "PWM Pin · 8-bit PWM with analogWrite() · 5V, 20mA, 40mA max",
+      "subtitle_bn": "৮-বিট পিডব্লিউএম analogWrite() · সার্ভো কন্ট্রোল লাইন",
+      "function_en": "PWM Pins: The PWM pins of an Arduino are 3, 5, 6, 9, 10, & 11, and gives an output of an 8-bit PWM with the function analogWrite().\n\nInput and Output: 14-digital pins which can be used as an input otherwise output by using the functions like pinMode(), digitalRead(), and digitalWrite(). Operates with 5V, gives or receives 20mA, includes 20k to 50k ohm pull up resistor, with 40mA maximum limit.",
+      "function_bn": "পিডব্লিউএম পিন: আর্ডুইনোর ৩, ৫, ৬, ৯, ১০ ও ১১ নম্বর পিনগুলো ৮-বিট পিডব্লিউএম আউটপুট দেয় analogWrite() ফাংশনের মাধ্যমে। পিনটি ৫ ভোল্টে কাজ করে এবং সর্বোচ্চ ৪০ মিলিঅ্যাম্পিয়ার কারেন্ট সহ্য করতে পারে।",
+      "electrical": {
+        "logic_level": "5V DC",
+        "pwm_resolution": "8-bit PWM (0-255 via analogWrite)",
+        "nominal_current": "20 mA",
+        "maximum_limit": "40 mA max"
+      },
+      "syllabus_tags": ["PWM Pins", "analogWrite()", "Robotics", "Digital I/O"],
+      "course_context": "Robotics & Automation: Generating pulse signals for servo motor position control.",
+      "related_pins": ["Pin_D10", "Pin_5V", "Pin_GND1"],
+      "camera_target": [-0.35, 0.4, -2.15]
+    },
+    {
+      "id": "pin_d6",
+      "mesh_name": "Pin_D6",
+      "category": "digital_pin",
+      "name_en": "Digital Pin 6 / PWM~",
+      "name_bn": "ডিজিটাল পিন ৬ / পিডব্লিউএম~",
+      "subtitle_en": "PWM Pin · 8-bit PWM with analogWrite() · 5V, 20mA, 40mA max",
+      "subtitle_bn": "৮-বিট পিডব্লিউএম analogWrite() · টাইমার-০",
+      "function_en": "PWM Pins: The PWM pins of an Arduino are 3, 5, 6, 9, 10, & 11, and gives an output of an 8-bit PWM with the function analogWrite().\n\nInput and Output: 14-digital pins used as input or output via pinMode(), digitalRead(), digitalWrite(). Operates with 5V, gives or receives 20mA, includes 20k to 50k ohm pull up resistor, and 40mA maximum current limit.",
+      "function_bn": "পিডব্লিউএম পিন: আর্ডুইনোর ৩, ৫, ৬, ৯, ১০ ও ১১ পিনগুলোর অন্যতম, যা analogWrite() ফাংশনের মাধ্যমে ৮-বিট পিডব্লিউএম প্রদান করে।",
+      "electrical": {
+        "logic_level": "5V DC",
+        "pwm_resolution": "8-bit PWM via analogWrite()",
+        "nominal_current": "20 mA",
+        "maximum_limit": "40 mA max"
+      },
+      "syllabus_tags": ["PWM Pins", "analogWrite()", "Timers", "Digital I/O"],
+      "course_context": "Hardware Timers: Fast PWM mode in AVR architecture.",
+      "related_pins": ["Pin_D5", "Pin_D3"],
+      "camera_target": [0.5, 0.4, -2.15]
+    },
+    {
+      "id": "pin_d5",
+      "mesh_name": "Pin_D5",
+      "category": "digital_pin",
+      "name_en": "Digital Pin 5 / PWM~",
+      "name_bn": "ডিজিটাল পিন ৫ / পিডব্লিউএম~",
+      "subtitle_en": "PWM Pin · 8-bit PWM with analogWrite() · 5V, 20mA, 40mA max",
+      "subtitle_bn": "৮-বিট পিডব্লিউএম analogWrite() · শোল্ডার জয়েন্ট",
+      "function_en": "PWM Pins: The PWM pins of an Arduino are 3, 5, 6, 9, 10, & 11, and gives an output of an 8-bit PWM with the function analogWrite().\n\nInput and Output: Operates with 5V, gives or receives 20mA, includes 20k to 50k ohm pull up resistor, and 40mA maximum limit using pinMode(), digitalRead(), digitalWrite().",
+      "function_bn": "পিডব্লিউএম পিন: analogWrite() ফাংশন দিয়ে ৮-বিট পিডব্লিউএম আউটপুট নিয়ন্ত্রণ করা যায়। এটি ২০-৫০ কিলো-ওহম পুল-আপ রেজিস্টরযুক্ত এবং ৫ ভোল্ট লজিকে চলে।",
+      "electrical": {
+        "logic_level": "5V DC",
+        "pwm_resolution": "8-bit PWM via analogWrite()",
+        "nominal_current": "20 mA",
+        "maximum_limit": "40 mA max"
+      },
+      "syllabus_tags": ["PWM Pins", "analogWrite()", "Kinematics", "Digital I/O"],
+      "course_context": "Actuator Interfacing: Calculating joint angles and mapping them to PWM duty cycles.",
+      "related_pins": ["Pin_D6", "Pin_D3", "Pin_5V"],
+      "camera_target": [0.75, 0.4, -2.15]
+    },
+    {
+      "id": "pin_d3",
+      "mesh_name": "Pin_D3",
+      "category": "digital_pin",
+      "name_en": "Digital Pin 3 / INT1 / PWM~",
+      "name_bn": "ডিজিটাল পিন ৩ / INT1 / পিডব্লিউএম~",
+      "subtitle_en": "External Interrupt 1 · 8-bit PWM with analogWrite() · 5V, 20mA, 40mA max",
+      "subtitle_bn": "এক্সটার্নাল ইন্টারাপ্ট ১ · ৮-বিট পিডব্লিউএম analogWrite()",
+      "function_en": "External Interrupt Pins: The external interrupt pins of the board are 2 & 3, and these pins can be arranged to activate an interrupt on a rising otherwise falling edge, a low-value otherwise a modify in value.\n\nPWM Pins: Pin 3 gives an output of an 8-bit PWM with the function analogWrite().\n\nInput and Output: 14-digital pins used as input or output using pinMode(), digitalRead(), digitalWrite(). Operates with 5V, gives or receives 20mA, includes 20k to 50k ohm pull up resistor, 40mA maximum limit.",
+      "function_bn": "এক্সটার্নাল ইন্টারাপ্ট পিন: বোর্ডের ২ এবং ৩ নম্বর পিন দুটি বাহ্যিক ইন্টারাপ্ট পিন যা রাইজিং এজ, ফলিং এজ, লো-ভ্যালু অথবা ভ্যালুর পরিবর্তনে (CHANGE) ইন্টারাপ্ট সক্রিয় করতে কনফিগার করা যায়। এছাড়া পিন ৩ analogWrite() ফাংশনের মাধ্যমে ৮-বিট পিডব্লিউএম প্রদান করে।",
+      "electrical": {
+        "logic_level": "5V DC",
+        "interrupt_trigger_modes": ["rising edge", "falling edge", "low-value", "modify in value (CHANGE)"],
+        "pwm_resolution": "8-bit PWM via analogWrite()",
+        "nominal_current": "20 mA",
+        "maximum_limit": "40 mA max"
+      },
+      "syllabus_tags": ["External Interrupt Pins", "PWM Pins", "analogWrite()", "Digital I/O"],
+      "course_context": "Interrupt Service Routines (ISR): Handling asynchronous external sensor pulses on Pin 3.",
+      "related_pins": ["Pin_D2", "Pin_5V", "Pin_GND1"],
+      "camera_target": [1.25, 0.4, -2.15]
+    },
+    {
+      "id": "pin_d2",
+      "mesh_name": "Pin_D2",
+      "category": "digital_pin",
+      "name_en": "Digital Pin 2 / INT0 (External Interrupt 0)",
+      "name_bn": "ডিজিটাল পিন ২ / INT0 (এক্সটার্নাল ইন্টারাপ্ট ০)",
+      "subtitle_en": "External Interrupt Pin · Rising / Falling / Low / Change Trigger",
+      "subtitle_bn": "এক্সটার্নাল ইন্টারাপ্ট পিন · রাইজিং / ফলিং / লো / চেঞ্জ ট্রিগার",
+      "function_en": "External Interrupt Pins: The external interrupt pins of the board are 2 & 3, and these pins can be arranged to activate an interrupt on a rising otherwise falling edge, a low-value otherwise a modify in value.\n\nInput and Output: Operates with 5V, gives or receives 20mA, includes 20k to 50k ohm pull up resistor, and 40mA maximum current limit using pinMode(), digitalRead(), digitalWrite().",
+      "function_bn": "এক্সটার্নাল ইন্টারাপ্ট পিন: বোর্ডের ২ এবং ৩ নম্বর পিন দুটি বাহ্যিক ইন্টারাপ্ট সক্রিয় করতে ব্যবহৃত হয়। এটি রাইজিং এজ, ফলিং এজ, লো-ভ্যালু বা ভ্যালু পরিবর্তনের ওপর ভিত্তি করে প্রসেসরকে থামিয়ে জরুরি কোড এক্সিকিউট করতে পারে।",
+      "electrical": {
+        "logic_level": "5V DC",
+        "interrupt_trigger_modes": ["rising edge", "falling edge", "low-value", "modify in value (CHANGE)"],
+        "nominal_current": "20 mA",
+        "maximum_limit": "40 mA max"
+      },
+      "syllabus_tags": ["External Interrupt Pins", "INT0", "Rising / Falling Edge", "Digital I/O"],
+      "course_context": "Interrupts & Real-Time Response: Using attachInterrupt() for instant emergency shutoffs and encoder counting.",
+      "related_pins": ["Pin_D3", "Pin_GND1"],
+      "camera_target": [1.5, 0.4, -2.15]
+    },
+    {
+      "id": "pin_d1",
+      "mesh_name": "Pin_D1",
+      "category": "digital_pin",
+      "name_en": "Digital Pin 1 / TX (Transmitter - UART Serial)",
+      "name_bn": "ডিজিটাল পিন ১ / টিএক্স (TX - ইউএআরটি সিরিয়াল ট্রান্সমিটার)",
+      "subtitle_en": "Serial Transmitter · Transfer TTL Serial Data · ATmega8U2/16U2 Link",
+      "subtitle_bn": "টিটিএল সিরিয়াল ট্রান্সমিটার · ATmega8U2 চিপের সাথে সংযোগ",
+      "function_en": "Serial Pins: The serial pins of an Arduino board are TX (1) and RX (0) pins and these pins can be used to transfer the TTL serial data. The connection of these pins can be done with the equivalent pins of the ATmega8 U2 USB to TTL chip.\n\nCommunication: An Arduino Uno uses the two functions like the transmitter digital pin1 and the receiver digital pin0. These pins are mainly used in UART TTL serial communication.\n\nInput and Output: Operates with 5V, gives or receives 20mA, includes 20k to 50k ohm pull up resistor, and 40mA maximum limit.",
+      "function_bn": "সিরিয়াল পিন: আর্ডুইনো বোর্ডের সিরিয়াল পিনসমূহ হলো TX (1) এবং RX (0) এবং এই পিনগুলো TTL সিরিয়াল ডেটা স্থানান্তরে ব্যবহৃত হয়। এদের সংযোগ ATmega8 U2 / 16U2 USB to TTL চিপের সাথে করা থাকে। পিন ১ মূলত UART ট্রান্সমিটার হিসেবে কাজ করে।",
+      "electrical": {
+        "logic_level": "5V TTL Serial",
+        "nominal_current": "20 mA",
+        "maximum_limit": "40 mA max",
+        "chip_interface": "ATmega8U2 / ATmega16U2 USB to TTL bridge"
+      },
+      "syllabus_tags": ["Serial Pins", "UART", "TX (Pin 1)", "TTL Serial", "Communication"],
+      "course_context": "UART Serial Protocols: Asynchronous data framing and serial terminal communication.",
+      "related_pins": ["Pin_D0", "Comp_USB_TypeB"],
+      "camera_target": [1.75, 0.4, -2.15]
+    },
+    {
+      "id": "pin_d0",
+      "mesh_name": "Pin_D0",
+      "category": "digital_pin",
+      "name_en": "Digital Pin 0 / RX (Receiver - UART Serial)",
+      "name_bn": "ডিজিটাল পিন ০ / আরএক্স (RX - ইউএআরটি সিরিয়াল রিসিভার)",
+      "subtitle_en": "Serial Receiver · Transfer TTL Serial Data · ATmega8U2/16U2 Link",
+      "subtitle_bn": "টিটিএল সিরিয়াল রিসিভার · ATmega8U2 চিপের সাথে সংযোগ",
+      "function_en": "Serial Pins: The serial pins of an Arduino board are TX (1) and RX (0) pins and these pins can be used to transfer the TTL serial data. The connection of these pins can be done with the equivalent pins of the ATmega8 U2 USB to TTL chip.\n\nCommunication: An Arduino Uno uses the two functions like the transmitter digital pin1 and the receiver digital pin0. These pins are mainly used in UART TTL serial communication.\n\nInput and Output: Operates with 5V, gives or receives 20mA, includes 20k to 50k ohm pull up resistor, and 40mA maximum limit.",
+      "function_bn": "সিরিয়াল পিন: আর্ডুইনো বোর্ডের TX (1) এবং RX (0) পিন দুটি TTL সিরিয়াল ডেটা স্থানান্তরে ব্যবহৃত হয় এবং এটি ATmega8 U2 USB to TTL চিপের সমমানের পিনের সাথে যুক্ত থাকে। পিন ০ মূলত রিসিভার হিসেবে কাজ করে।",
+      "electrical": {
+        "logic_level": "5V TTL Serial",
+        "nominal_current": "20 mA",
+        "maximum_limit": "40 mA max",
+        "chip_interface": "ATmega8U2 / ATmega16U2 USB to TTL bridge"
+      },
+      "syllabus_tags": ["Serial Pins", "UART", "RX (Pin 0)", "TTL Serial", "Communication"],
+      "course_context": "Serial Communications: Interrupt-driven UART reception and avoiding flash conflicts during sketch upload.",
+      "related_pins": ["Pin_D1", "Comp_USB_TypeB"],
+      "camera_target": [2.0, 0.4, -2.15]
+    },
+    {
+      "id": "pin_a0",
+      "mesh_name": "Pin_A0",
+      "category": "analog_pin",
+      "name_en": "Analog Input Pin A0",
+      "name_bn": "অ্যানালগ ইনপুট পিন A0",
+      "subtitle_en": "10-bit Successive Approximation ADC Channel 0",
+      "subtitle_bn": "১০-বিট সাকসেসিভ অ্যাপ্রক্সিমেশন এডিসি চ্যানেল ০",
+      "function_en": "Connected to Channel 0 of the internal 10-bit Successive Approximation ADC. Quantizes incoming analog voltages (0V to 5V) into integer values from 0 to 1023 (with ~4.88 mV resolution per step).",
+      "function_bn": "অভ্যন্তরীণ ১০-বিট এডিসি (ADC) চ্যানেল ০-এর সাথে যুক্ত। ০ থেকে ৫ ভোল্টের যেকোনো অ্যানালগ সংকেতকে ০ থেকে ১০২৩ পর্যন্ত ডিজিটাল মানে রূপান্তর করে (প্রতি স্টেপে প্রায় ৪.৮৮ মিলিভোল্ট রেজোলিউশন)।",
+      "electrical": {
+        "input_voltage_range": "0V - 5V (default) or AREF voltage",
+        "adc_resolution": "10-bit (1024 steps)",
+        "sampling_rate": "~10,000 samples/sec max",
+        "input_impedance": "100 MΩ typical"
+      },
+      "syllabus_tags": ["Analog ADC", "Sensors", "Sampling & Quantization"],
+      "course_context": "Instrumentation & Sensors: Interfacing LM35 temperature sensors, LDR light sensors, and calculating quantization error.",
+      "related_pins": ["Pin_A1", "Pin_AREF", "Pin_5V", "Pin_GND1"],
+      "camera_target": [0.45, 0.4, 2.15]
+    },
+    {
+      "id": "pin_a4",
+      "mesh_name": "Pin_A4",
+      "category": "analog_pin",
+      "name_en": "Analog Pin A4 / SDA (I2C Data)",
+      "name_bn": "অ্যানালগ পিন A4 / এসডিএ (SDA - I2C ডেটা)",
+      "subtitle_en": "I2C Serial Data Line & ADC Channel 4",
+      "subtitle_bn": "আইটুসি সিরিয়াল ডেটা লাইন এবং এডিসি চ্যানেল ৪",
+      "function_en": "Multiplexed pin functioning as either ADC Channel 4 or the bidirectional Serial Data (SDA) line for the I2C protocol. Used for OLED displays, RTC clocks (DS3231), and MPU-6050 IMUs.",
+      "function_bn": "এডিসি চ্যানেল ৪ অথবা আইটুসি (I2C) বাসের সিরিয়াল ডেটা (SDA) লাইন হিসেবে কাজ করে। ওএলইডি ডিসপ্লে, আরটিসি ঘড়ি এবং গাইরোস্কোপ সংযোগে ব্যবহৃত হয়।",
+      "electrical": {
+        "i2c_speed": "Standard Mode (100 kHz) & Fast Mode (400 kHz)",
+        "open_drain": "Requires external 4.7kΩ pull-up resistors to 5V",
+        "alternate_functions": ["SDA (I2C)", "ADC4"]
+      },
+      "syllabus_tags": ["I2C (Two-Wire)", "Analog ADC", "Displays & Sensors"],
+      "course_context": "Embedded Protocols: Master-slave addressing and start/stop conditions on the I2C bus.",
+      "related_pins": ["Pin_A5", "Pin_5V", "Pin_GND2"],
+      "camera_target": [1.45, 0.4, 2.15]
+    },
+    {
+      "id": "pin_a5",
+      "mesh_name": "Pin_A5",
+      "category": "analog_pin",
+      "name_en": "Analog Pin A5 / SCL (I2C Clock)",
+      "name_bn": "অ্যানালগ পিন A5 / এসসিএল (SCL - I2C ক্লক)",
+      "subtitle_en": "I2C Serial Clock Line & ADC Channel 5",
+      "subtitle_bn": "আইটুসি সিরিয়াল ক্লক লাইন এবং এডিসি চ্যানেল ৫",
+      "function_en": "The Serial Clock (SCL) line for the synchronous I2C bus. Synchronizes bit transfers over the SDA line.",
+      "function_bn": "আইটুসি বাসের মাস্টার কর্তৃক উৎপন্ন সিরিয়াল ক্লক (SCL) লাইন। ডেটা স্থানান্তরের সময় সমলয় (synchronize) বজায় রাখে।",
+      "electrical": {
+        "bus_type": "Synchronous, Open-drain",
+        "alternate_functions": ["SCL (I2C)", "ADC5"]
+      },
+      "syllabus_tags": ["I2C (Two-Wire)", "Analog ADC", "Clock Signal"],
+      "course_context": "Microcontroller Communication: Bus clock generation and multi-device address decoding.",
+      "related_pins": ["Pin_A4", "Pin_5V", "Pin_GND2"],
+      "camera_target": [1.7, 0.4, 2.15]
+    },
+    {
+      "id": "pin_5v",
+      "mesh_name": "Pin_5V",
+      "category": "power_pin",
+      "name_en": "5Volts Power Pin (Regulated Power Supply - RPS)",
+      "name_bn": "৫ ভোল্ট পাওয়ার পিন (রেগুলেটেড পাওয়ার সাপ্লাই - RPS)",
+      "subtitle_en": "Power Supply to Microcontroller & Onboard Components",
+      "subtitle_bn": "মাইক্রোকন্ট্রোলার ও বোর্ডের কম্পোনেন্টের মূল ৫ ভোল্ট পাওয়ার",
+      "function_en": "5Volts: The RPS (regulated power supply) can be used to give the power supply to the microcontroller as well as components which are used on the Arduino board. This can approach from the input voltage through a regulator.",
+      "function_bn": "রেগুলেটেড পাওয়ার সাপ্লাই (RPS) যা মাইক্রোকন্ট্রোলার এবং আর্ডুইনো বোর্ডের অন্যান্য কম্পোনেন্টে ৫ ভোল্ট বিদ্যুৎ সরবরাহ করে। এটি ইনপুট ভোল্টেজ থেকে অনবোর্ড রেগুলেটরের মাধ্যমে উৎপন্ন হয়।",
+      "electrical": {
+        "voltage": "5.0V DC Regulated",
+        "source": "Input voltage through onboard 5V regulator or USB VBUS",
+        "max_current": "Up to 500 mA (USB) / 800 mA (External RPS)"
+      },
+      "syllabus_tags": ["Power Supply", "5Volts RPS", "Voltage Regulation"],
+      "course_context": "Power Supplies & Regulators: Supplying clean 5V to MCU logic and external sensors.",
+      "related_pins": ["Pin_3V3", "Pin_GND1", "Pin_VIN", "Comp_Regulator5V"],
+      "camera_target": [-1.2, 0.4, 2.15]
+    },
+    {
+      "id": "pin_3v3",
+      "mesh_name": "Pin_3V3",
+      "category": "power_pin",
+      "name_en": "3V3 Supply Voltage (Onboard Regulator)",
+      "name_bn": "৩.৩ ভোল্ট পাওয়ার পিন (অনবোর্ড রেগুলেটর)",
+      "subtitle_en": "3.3V Output · Highest Draw Current 50 mA",
+      "subtitle_bn": "৩.৩ ভোল্ট আউটপুট · সর্বোচ্চ কারেন্ট ৫০ মিলিঅ্যাম্পিয়ার",
+      "function_en": "3V3: A 3.3 supply voltage can be generated with the onboard regulator, and the highest draw current will be 50 mA.",
+      "function_bn": "অনবোর্ড রেগুলেটরের মাধ্যমে উৎপাদিত ৩.৩ ভোল্ট সাপ্লাই ভোল্টেজ। এর সর্বোচ্চ ড্র কারেন্ট (Highest draw current) ৫০ মিলিঅ্যাম্পিয়ার (50 mA)।",
+      "electrical": {
+        "voltage": "3.3V DC",
+        "highest_draw_current": "50 mA max",
+        "regulator_type": "Onboard Ultra-Low Dropout (LDO)"
+      },
+      "syllabus_tags": ["Power Supply", "3V3 Rail", "Current Limit 50mA"],
+      "course_context": "IoT Interfacing: 3.3V sensor rails with 50 mA maximum current draw restriction.",
+      "related_pins": ["Pin_5V", "Pin_GND1"],
+      "camera_target": [-1.45, 0.4, 2.15]
+    },
+    {
+      "id": "pin_gnd1",
+      "mesh_name": "Pin_GND1",
+      "category": "power_pin",
+      "name_en": "GND (Ground) Pins",
+      "name_bn": "গ্রাউন্ড (GND) পিনসমূহ",
+      "subtitle_en": "Common Ground Terminals for Battery & Circuits",
+      "subtitle_bn": "কমন গ্রাউন্ড ও ব্যাটারি টার্মিনাল রিটার্ন লাইন",
+      "function_en": "GND: GND (ground) pins. The battery terminals can be placed in the pins of Vin as well as GND to complete the exterior power supply circuit loop.",
+      "function_bn": "গ্রাউন্ড (GND) পিনসমূহ। ব্যাটারির নেগেটিভ টার্মিনাল GND পিনে এবং পজিটিভ টার্মিনাল Vin পিনে সংযোগ করে এক্সটার্নাল পাওয়ার সার্কিট সম্পন্ন করা যায়।",
+      "electrical": {
+        "voltage": "0.0V reference",
+        "connection": "Common Ground Plane"
+      },
+      "syllabus_tags": ["Power Supply", "GND", "Battery Connection"],
+      "course_context": "Circuit Fundamentals: Connecting battery terminals to Vin and GND pins.",
+      "related_pins": ["Pin_VIN", "Pin_5V"],
+      "camera_target": [-0.95, 0.4, 2.15]
+    },
+    {
+      "id": "pin_vin",
+      "mesh_name": "Pin_VIN",
+      "category": "power_pin",
+      "name_en": "Vin (Input Voltage)",
+      "name_bn": "ভি-ইন (Vin - ইনপুট ভোল্টেজ)",
+      "subtitle_en": "Exterior Power Supply Input (6 to 20 Volts)",
+      "subtitle_bn": "বাহ্যিক পাওয়ার সাপ্লাই ইনপুট (৬ থেকে ২০ ভোল্ট)",
+      "function_en": "Vin: The input voltage or Vin to the Arduino while it is using an exterior power supply opposite to volts from the connection of USB or else RPS (regulated power supply). By using this pin, one can supply the voltage (Exterior power supply 6 to 20 volts from battery or AC to DC adapter).",
+      "function_bn": "ভি-ইন (Vin): আর্ডুইনোতে বাহ্যিক পাওয়ার সাপ্লাই (Exterior power supply) দেওয়ার ইনপুট ভোল্টেজ পিন, যা ইউএসবি বা রেগুলেটেড সাপ্লাইয়ের বিকল্প হিসেবে ব্যবহৃত হয়। এই পিনের মাধ্যমে ৬ থেকে ২০ ভোল্ট সরবরাহ করা যায়।",
+      "electrical": {
+        "exterior_power_supply_limits": "6 to 20 Volts DC",
+        "recommended": "7 to 12 Volts DC",
+        "connection_type": "Battery terminal or external AC-to-DC adapter input"
+      },
+      "syllabus_tags": ["Power Supply", "Vin", "Exterior Power 6-20V"],
+      "course_context": "Power Subsystems: Using Vin with external 9V batteries or AC to DC adapters.",
+      "related_pins": ["Pin_5V", "Pin_GND1", "Comp_DC_BarrelJack"],
+      "camera_target": [-0.45, 0.4, 2.15]
+    },
+    {
+      "id": "pin_aref",
+      "mesh_name": "Pin_AREF",
+      "category": "analog_pin",
+      "name_en": "AREF (Analog Reference) Pin",
+      "name_bn": "এরেফ (AREF - অ্যানালগ রেফারেন্স) পিন",
+      "subtitle_en": "Reference Voltage to Inputs of Analog I/Ps via analogReference()",
+      "subtitle_bn": "analogReference() ফাংশনের জন্য অ্যানালগ ইনপুটের রেফারেন্স ভোল্টেজ",
+      "function_en": "AREF (Analog Reference) Pin: An analog reference pin is the reference voltage to the inputs of an analog i/ps using the function like analogReference(). Sets the upper voltage boundary for ADC quantization.",
+      "function_bn": "অ্যানালগ রেফারেন্স (AREF) পিন: এটি অ্যানালগ ইনপুটসমূহের রেফারেন্স ভোল্টেজ হিসেবে কাজ করে যা analogReference() ফাংশনের মাধ্যমে কনফিগার করা যায়।",
+      "electrical": {
+        "voltage_range": "0V to 5.0V DC",
+        "function_call": "analogReference(EXTERNAL)",
+        "internal_resistance": "32 kΩ"
+      },
+      "syllabus_tags": ["AREF", "Analog Reference", "analogReference()"],
+      "course_context": "Precision ADC: Configuring external reference voltage to improve sensor conversion resolution.",
+      "related_pins": ["Pin_A0", "Pin_A4", "Pin_A5"],
+      "camera_target": [-1.6, 0.4, -2.15]
+    },
+    {
+      "id": "pin_reset",
+      "mesh_name": "Pin_RESET",
+      "category": "control_pin",
+      "name_en": "Reset (RST) Pin",
+      "name_bn": "রিসেট (RST) পিন",
+      "subtitle_en": "Active-Low Line for Resetting Microcontroller",
+      "subtitle_bn": "মাইক্রোকন্ট্রোলার রিসেট করার অ্যাক্টিভ-লো লাইন",
+      "function_en": "Reset (RST) Pin: This pin brings a low line for resetting the microcontroller, and it is very useful for using an RST button toward shields which can block the one over the Arduino R3 board.",
+      "function_bn": "রিসেট (RST) পিন: এই পিনে লো (LOW) সিগন্যাল আনলে মাইক্রোকন্ট্রোলার রিসেট হয়। আর্ডুইনো বোর্ডের অনবোর্ড রিসেট বাটনটি যখন কোনো শিল্ড (shield) দ্বারা ঢাকা পড়ে যায়, তখন এই পিনের মাধ্যমে শিল্ডে রিসেট বাটন যুক্ত করা খুবই উপযোগী।",
+      "electrical": {
+        "logic_level": "Active LOW (< 0.9V brings reset)",
+        "pullup": "10 kΩ pull-up to 5V rail"
+      },
+      "syllabus_tags": ["Reset Pin", "RST", "Shields", "Active Low"],
+      "course_context": "Hardware Control: Connecting external reset pushbuttons on stacked shield modules.",
+      "related_pins": ["Comp_ResetButton", "Pin_5V", "Pin_GND1"],
+      "camera_target": [-1.7, 0.4, 2.15]
+    }
+  ]
+}

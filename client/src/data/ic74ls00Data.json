@@ -1,0 +1,395 @@
+{
+  "device": "ic_74ls00",
+  "name_en": "SN74LS00N Quad 2-Input NAND Gate (DIP-14)",
+  "name_bn": "৭৪এলএস০০ কোয়াড ২-ইনপুট ন্যান্ড গেট আইসি (DIP-14)",
+  "description_en": "The quintessential Universal Logic Gate IC. Contains four independent 2-input NAND gates utilizing Low-Power Schottky (LS) TTL technology. Serves as the foundational building block for all combinational logic, SR latches, flip-flops, registers, and digital ALUs in computer engineering.",
+  "description_bn": "ডিজিটাল লজিক ডিজাইনের ঐতিহাসিক ইউনিভার্সাল গেট আইসি। এতে রয়েছে চারটি স্বাধীন ২-ইনপুট ন্যান্ড (NAND) গেট যা লো-পাওয়ার শটকি (LS) টিটিএল প্রযুক্তিতে নির্মিত। এটি ব্যবহার করে যেকোনো কম্বিনেশনাল লজিক, এস-আর ল্যাচ, ফ্লিপ-ফ্লপ এবং মেমরি রেজিস্টার তৈরি করা যায়।",
+  "specs_summary": {
+    "logic_family": "TTL Low-Power Schottky (74LS Series)",
+    "package": "14-Pin Plastic / Ceramic Dual In-Line Package (DIP-14)",
+    "supply_voltage_vcc": "4.75V to 5.25V DC (Nominal 5.0V)",
+    "propagation_delay": "9.0 ns (typical tPLH / tPHL)",
+    "high_level_input_vih": "Minimum 2.0V",
+    "low_level_input_vil": "Maximum 0.8V",
+    "high_level_output_voh": "Minimum 2.7V (Typical 3.4V @ -400µA)",
+    "low_level_output_vol": "Maximum 0.5V (Typical 0.35V @ 8.0mA)",
+    "operating_temperature": "0°C to 70°C (Commercial Grade)"
+  },
+  "items": [
+    {
+      "id": "pin_1a_1",
+      "mesh_name": "Pin_1A_1",
+      "pin_number": 1,
+      "category": "logic_input",
+      "name_en": "1A (Pin 1) - Gate 1 Data Input A",
+      "name_bn": "1A (পিন ১) - গেট ১ এর প্রথম ইনপুট",
+      "subtitle_en": "First Input of Quad NAND Gate #1",
+      "subtitle_bn": "প্রথম ন্যান্ড গেটের ১নং ইনপুট টার্মিনাল",
+      "function_en": "Primary data input terminal for NAND Gate 1. In standard 5V TTL logic, an open/floating input is read as HIGH (~1.4V to 2.0V threshold), but standard laboratory practice requires tying it to VCC through a 1kΩ-10kΩ pull-up resistor or driving it directly from another TTL gate.",
+      "function_bn": "গেট ১ এর প্রাথমিক ডেটা ইনপুট পিন। টিটিএল লজিকে কোনো ইনপুট খোলা বা ফ্লোটিং রাখলে তা স্বাভাবিকভাবে হাই (HIGH) হিসেবে বিবেচিত হয়। তবে ল্যাব প্র্যাকটিসে সর্বদা একে পুল-আপ রেজিস্টর বা পূর্ববর্তী গেটের আউটপুট দ্বারা চালনা করা উচিত।",
+      "electrical": {
+        "logic_standard": "TTL 5V",
+        "input_high_vih": "≥ 2.0 V",
+        "input_low_vil": "≤ 0.8 V",
+        "input_current_iih": "20 µA max (@ 2.7V)",
+        "input_current_iil": "-0.4 mA max (@ 0.4V)"
+      },
+      "syllabus_tags": ["Logic Inputs", "Gate 1", "TTL Switching", "DLD Lab 1"],
+      "course_context": "Digital Logic Design (CSE-211/EEE-211): Testing input thresholds and NAND truth tables on breadboard.",
+      "related_pins": ["Pin_1B_2", "Pin_1Y_3"],
+      "camera_target": [-1.6, 0.2, 0.9]
+    },
+    {
+      "id": "pin_1b_2",
+      "mesh_name": "Pin_1B_2",
+      "pin_number": 2,
+      "category": "logic_input",
+      "name_en": "1B (Pin 2) - Gate 1 Data Input B",
+      "name_bn": "1B (পিন ২) - গেট ১ এর দ্বিতীয় ইনপুট",
+      "subtitle_en": "Second Input of Quad NAND Gate #1",
+      "subtitle_bn": "প্রথম ন্যান্ড গেটের ২নং ইনপুট টার্মিনাল",
+      "function_en": "Secondary data input terminal for NAND Gate 1. Combined with Pin 1 (1A) through the internal multi-emitter transistor input stage. When both 1A and 1B are driven HIGH (≥2.0V), output 1Y (Pin 3) transitions to LOW (≤0.5V).",
+      "function_bn": "গেট ১ এর দ্বিতীয় ডেটা ইনপুট পিন। এটি পিন ১ (1A) এর সাথে যৌথভাবে প্রথম ন্যান্ড গেট সম্পন্ন করে। যখন 1A এবং 1B উভয়ই হাই (HIGH) হয়, কেবল তখনই আউটপুট পিন ৩ (1Y) লো (LOW) হয়।",
+      "electrical": {
+        "logic_standard": "TTL 5V",
+        "input_high_vih": "≥ 2.0 V",
+        "input_low_vil": "≤ 0.8 V",
+        "input_current_iil": "-0.4 mA max"
+      },
+      "syllabus_tags": ["Logic Inputs", "Gate 1", "Truth Tables"],
+      "course_context": "Mano & Ciletti: Multi-emitter BJT input structure in 74LS TTL integrated circuits.",
+      "related_pins": ["Pin_1A_1", "Pin_1Y_3"],
+      "camera_target": [-1.1, 0.2, 0.9]
+    },
+    {
+      "id": "pin_1y_3",
+      "mesh_name": "Pin_1Y_3",
+      "pin_number": 3,
+      "category": "logic_output",
+      "name_en": "1Y (Pin 3) - Gate 1 NAND Output",
+      "name_bn": "1Y (পিন ৩) - গেট ১ এর ন্যান্ড আউটপুট",
+      "subtitle_en": "Boolean Logic Output: Y = ~(1A · 1B)",
+      "subtitle_bn": "বুলিয়ান আউটপুট: Y = ~(1A · 1B)",
+      "function_en": "Totem-pole TTL output stage of NAND Gate 1. Delivers active HIGH (typ 3.4V) when either input is LOW, and active LOW (typ 0.35V) when both inputs are HIGH. Sinks up to 8mA current in LOW state, capable of directly driving up to 10 standard LS-TTL inputs (Fan-out = 10) or an indicator LED via current-limiting resistor.",
+      "function_bn": "গেট ১ এর টোটেম-পোল আউটপুট স্টেজ। যেকোনো একটি ইনপুট লো (LOW) হলেই এটি হাই (HIGH, প্রায় ৩.৪ ভোল্ট) দেয়; কেবল উভয় ইনপুট হাই হলেই আউটপুট লো (LOW, প্রায় ০.৩৫ ভোল্ট) হয়। এটি সর্বোচ্চ ৮ মিলি-অ্যাম্পিয়ার পর্যন্ত কারেন্ট সিঙ্ক করতে পারে (Fan-out = ১০)।",
+      "electrical": {
+        "output_high_voh": "≥ 2.7 V (typ 3.4 V)",
+        "output_low_vol": "≤ 0.5 V (typ 0.35 V)",
+        "sink_current_iol": "8.0 mA max",
+        "source_current_ioh": "-400 µA max",
+        "fan_out": "10 LS-TTL loads"
+      },
+      "syllabus_tags": ["Logic Outputs", "Gate 1", "Totem-Pole Output", "Fan-out"],
+      "course_context": "Laboratory Experiment: Measuring output high (VOH) and output low (VOL) with digital multimeter and oscilloscope.",
+      "related_pins": ["Pin_1A_1", "Pin_1B_2"],
+      "camera_target": [-0.6, 0.2, 0.9]
+    },
+    {
+      "id": "pin_2a_4",
+      "mesh_name": "Pin_2A_4",
+      "pin_number": 4,
+      "category": "logic_input",
+      "name_en": "2A (Pin 4) - Gate 2 Data Input A",
+      "name_bn": "2A (পিন ৪) - গেট ২ এর প্রথম ইনপুট",
+      "subtitle_en": "First Input of Quad NAND Gate #2",
+      "subtitle_bn": "দ্বিতীয় ন্যান্ড গেটের প্রথম ইনপুট",
+      "function_en": "Input A for NAND Gate 2. In SR Latch circuit implementations, this pin frequently receives the cross-coupled feedback output from Gate 1 (Pin 3) to form the bistable memory element.",
+      "function_bn": "গেট ২ এর প্রথম ইনপুট পিন। এস-আর ল্যাচ (SR Latch) তৈরিতে গেট ১ এর আউটপুট (পিন ৩) সাধারণত এই পিনে ফিডব্যাক হিসেবে সংযুক্ত করা হয়।",
+      "electrical": {
+        "logic_standard": "TTL 5V",
+        "input_high_vih": "≥ 2.0 V",
+        "input_low_vil": "≤ 0.8 V"
+      },
+      "syllabus_tags": ["Logic Inputs", "Gate 2", "SR Latch Construction"],
+      "course_context": "Sequential Logic: Building a bistable RS Flip-Flop using cross-coupled NAND gates.",
+      "related_pins": ["Pin_2B_5", "Pin_2Y_6"],
+      "camera_target": [-0.1, 0.2, 0.9]
+    },
+    {
+      "id": "pin_2b_5",
+      "mesh_name": "Pin_2B_5",
+      "pin_number": 5,
+      "category": "logic_input",
+      "name_en": "2B (Pin 5) - Gate 2 Data Input B",
+      "name_bn": "2B (পিন ৫) - গেট ২ এর দ্বিতীয় ইনপুট",
+      "subtitle_en": "Second Input of Quad NAND Gate #2",
+      "subtitle_bn": "দ্বিতীয় ন্যান্ড গেটের দ্বিতীয় ইনপুট",
+      "function_en": "Input B for NAND Gate 2. In an active-low SR Latch, Pin 5 acts as the active-low Set (S#) or Reset (R#) trigger input.",
+      "function_bn": "গেট ২ এর দ্বিতীয় ইনপুট পিন। অ্যাক্টিভ-লো এস-আর ল্যাচে এটি সেট বা রিসেট সিগন্যাল গ্রহণের জন্য ব্যবহৃত হয়।",
+      "electrical": {
+        "logic_standard": "TTL 5V",
+        "input_high_vih": "≥ 2.0 V",
+        "input_low_vil": "≤ 0.8 V"
+      },
+      "syllabus_tags": ["Logic Inputs", "Gate 2", "Sequential Circuits"],
+      "course_context": "Sequential Circuits Lab: Truth table of cross-coupled active-low SR latch.",
+      "related_pins": ["Pin_2A_4", "Pin_2Y_6"],
+      "camera_target": [0.4, 0.2, 0.9]
+    },
+    {
+      "id": "pin_2y_6",
+      "mesh_name": "Pin_2Y_6",
+      "pin_number": 6,
+      "category": "logic_output",
+      "name_en": "2Y (Pin 6) - Gate 2 NAND Output",
+      "name_bn": "2Y (পিন ৬) - গেট ২ এর ন্যান্ড আউটপুট",
+      "subtitle_en": "Boolean Logic Output: Y = ~(2A · 2B)",
+      "subtitle_bn": "বুলিয়ান আউটপুট: Y = ~(2A · 2B)",
+      "function_en": "Output terminal of NAND Gate 2. In sequential circuits, this pin represents the inverted output Q-bar (or Q depending on topology) of the memory latch.",
+      "function_bn": "গেট ২ এর আউটপুট টার্মিনাল। ল্যাচ ও ফ্লিপ-ফ্লপ সার্কিটে এটি সাধারণত কমপ্লিমেন্টেড আউটপুট Q-bar নির্দেশ করে।",
+      "electrical": {
+        "output_high_voh": "≥ 2.7 V (typ 3.4 V)",
+        "output_low_vol": "≤ 0.5 V (typ 0.35 V)",
+        "propagation_delay": "9.0 ns"
+      },
+      "syllabus_tags": ["Logic Outputs", "Gate 2", "Memory Elements"],
+      "course_context": "Laboratory Experiment: Propagation delay measurement using dual-channel oscilloscope.",
+      "related_pins": ["Pin_2A_4", "Pin_2B_5"],
+      "camera_target": [0.9, 0.2, 0.9]
+    },
+    {
+      "id": "pin_gnd_7",
+      "mesh_name": "Pin_GND_7",
+      "pin_number": 7,
+      "category": "power_supply",
+      "name_en": "GND (Pin 7) - Ground Reference (0V)",
+      "name_bn": "GND (পিন ৭) - গ্রাউন্ড রেফারেন্স (০ ভোল্ট)",
+      "subtitle_en": "Common Circuit Return & Substrate Ground",
+      "subtitle_bn": "সার্কিটের সাধারণ গ্রাউন্ড ও সিলিকন সাবস্ট্রেট সংযোগ",
+      "function_en": "System ground reference (0 Volts). Connects directly to the IC leadframe die attach pad and silicon substrate. All input logic voltage levels (VIH, VIL) and output drive levels (VOH, VOL) are referenced with respect to this pin.",
+      "function_bn": "আইসির মূল গ্রাউন্ড রেফারেন্স পিন (০ ভোল্ট)। এটি আইসির সিলিকন সাবস্ট্রেট ও প্যাকেজের সাথে সংযুক্ত। সার্কিটের সকল লজিক ভোল্টেজ এই পিনের সাপেক্ষে পরিমাপ করা হয়।",
+      "electrical": {
+        "nominal_voltage": "0.0 V DC",
+        "current_return": "Carries total IC supply current (ICC typ 4.4mA, max 8.8mA)"
+      },
+      "syllabus_tags": ["Power Supply", "Grounding", "Lab Safety"],
+      "course_context": "Breadboard Prototyping: Always connect Pin 7 (GND) to the common negative rail before applying power.",
+      "related_pins": ["Pin_VCC_14"],
+      "camera_target": [1.4, 0.2, 0.9]
+    },
+    {
+      "id": "pin_3y_8",
+      "mesh_name": "Pin_3Y_8",
+      "pin_number": 8,
+      "category": "logic_output",
+      "name_en": "3Y (Pin 8) - Gate 3 NAND Output",
+      "name_bn": "3Y (পিন ৮) - গেট ৩ এর ন্যান্ড আউটপুট",
+      "subtitle_en": "Boolean Logic Output: Y = ~(3A · 3B)",
+      "subtitle_bn": "বুলিয়ান আউটপুট: Y = ~(3A · 3B)",
+      "function_en": "Output terminal of NAND Gate 3. Note the asymmetric pinout in DIP-14 74LS series: Pin 8 is the output, followed by inputs 3A (Pin 9) and 3B (Pin 10).",
+      "function_bn": "গেট ৩ এর আউটপুট পিন। লক্ষ্য করুন, ৭৪ সিরিজের আইসিতে পিন ৮ হলো আউটপুট, এবং পরবর্তী পিন ৯ ও ১০ হলো ইনপুট।",
+      "electrical": {
+        "output_high_voh": "≥ 2.7 V",
+        "output_low_vol": "≤ 0.5 V",
+        "propagation_delay": "9.0 ns"
+      },
+      "syllabus_tags": ["Logic Outputs", "Gate 3", "Pinout Peculiarities"],
+      "course_context": "Common Lab Mistake: Reversing Gate 3 output (Pin 8) with inputs (Pins 9 & 10) on breadboards.",
+      "related_pins": ["Pin_3A_9", "Pin_3B_10"],
+      "camera_target": [1.4, 0.2, -0.9]
+    },
+    {
+      "id": "pin_3a_9",
+      "mesh_name": "Pin_3A_9",
+      "pin_number": 9,
+      "category": "logic_input",
+      "name_en": "3A (Pin 9) - Gate 3 Data Input A",
+      "name_bn": "3A (পিন ৯) - গেট ৩ এর প্রথম ইনপুট",
+      "subtitle_en": "First Input of Quad NAND Gate #3",
+      "subtitle_bn": "তৃতীয় ন্যান্ড গেটের প্রথম ইনপুট",
+      "function_en": "Data input A for NAND Gate 3. Internally connected to Schottky-clamped BJT switching transistors for ultra-fast nanosecond logic transitions.",
+      "function_bn": "গেট ৩ এর প্রথম ইনপুট পিন। আইসির অভ্যন্তরে শটকি ডায়োডযুক্ত ট্রানজিস্টরের সাথে যুক্ত যা অতি দ্রুত ন্যানোসেকেন্ড গতিতে সুইচিং সম্পন্ন করে।",
+      "electrical": {
+        "logic_standard": "TTL 5V",
+        "input_high_vih": "≥ 2.0 V",
+        "input_low_vil": "≤ 0.8 V"
+      },
+      "syllabus_tags": ["Logic Inputs", "Gate 3", "Schottky TTL"],
+      "course_context": "DLD Lab: Implementing 3-input or 4-input logic expressions using cascaded NAND gates.",
+      "related_pins": ["Pin_3B_10", "Pin_3Y_8"],
+      "camera_target": [0.9, 0.2, -0.9]
+    },
+    {
+      "id": "pin_3b_10",
+      "mesh_name": "Pin_3B_10",
+      "pin_number": 10,
+      "category": "logic_input",
+      "name_en": "3B (Pin 10) - Gate 3 Data Input B",
+      "name_bn": "3B (পিন ১০) - গেট ৩ এর দ্বিতীয় ইনপুট",
+      "subtitle_en": "Second Input of Quad NAND Gate #3",
+      "subtitle_bn": "তৃতীয় ন্যান্ড গেটের দ্বিতীয় ইনপুট",
+      "function_en": "Data input B for NAND Gate 3. Completes the two-input logic condition for Gate 3.",
+      "function_bn": "গেট ৩ এর দ্বিতীয় ইনপুট পিন। পিন ৯ এর সাথে যৌথভাবে গেট ৩ এর কার্যকারিতা নির্ধারণ করে।",
+      "electrical": {
+        "logic_standard": "TTL 5V",
+        "input_high_vih": "≥ 2.0 V",
+        "input_low_vil": "≤ 0.8 V"
+      },
+      "syllabus_tags": ["Logic Inputs", "Gate 3"],
+      "course_context": "Digital Systems: Unused inputs on active gates must be tied to VCC via resistor to prevent noise pickup.",
+      "related_pins": ["Pin_3A_9", "Pin_3Y_8"],
+      "camera_target": [0.4, 0.2, -0.9]
+    },
+    {
+      "id": "pin_4y_11",
+      "mesh_name": "Pin_4Y_11",
+      "pin_number": 11,
+      "category": "logic_output",
+      "name_en": "4Y (Pin 11) - Gate 4 NAND Output",
+      "name_bn": "4Y (পিন ১১) - গেট ৪ এর ন্যান্ড আউটপুট",
+      "subtitle_en": "Boolean Logic Output: Y = ~(4A · 4B)",
+      "subtitle_bn": "বুলিয়ান আউটপুট: Y = ~(4A · 4B)",
+      "function_en": "Output terminal of NAND Gate 4. Together with Gates 1, 2, and 3, allows a single 74LS00 IC to fully implement a 2-to-1 multiplexer, a full adder stage, or a complete XOR gate without any additional ICs.",
+      "function_bn": "গেট ৪ এর আউটপুট পিন। অন্য তিনটি গেটের সাথে সমন্বয় করে একটিমাত্র ৭৪এলএস০০ আইসি দিয়ে সম্পূর্ণ এক্স-অর (XOR) গেট বা ২-টু-১ মাল্টিপ্লেক্সার বাস্তবায়ন করা যায়।",
+      "electrical": {
+        "output_high_voh": "≥ 2.7 V",
+        "output_low_vol": "≤ 0.5 V",
+        "propagation_delay": "9.0 ns"
+      },
+      "syllabus_tags": ["Logic Outputs", "Gate 4", "Universal Gate Synthesis"],
+      "course_context": "Exam Question: Synthesize an Exclusive-OR (XOR) gate using exactly four 2-input NAND gates of a 74LS00.",
+      "related_pins": ["Pin_4A_12", "Pin_4B_13"],
+      "camera_target": [-0.1, 0.2, -0.9]
+    },
+    {
+      "id": "pin_4a_12",
+      "mesh_name": "Pin_4A_12",
+      "pin_number": 12,
+      "category": "logic_input",
+      "name_en": "4A (Pin 12) - Gate 4 Data Input A",
+      "name_bn": "4A (পিন ১২) - গেট ৪ এর প্রথম ইনপুট",
+      "subtitle_en": "First Input of Quad NAND Gate #4",
+      "subtitle_bn": "চতুর্থ ন্যান্ড গেটের প্রথম ইনপুট",
+      "function_en": "Data input terminal A for NAND Gate 4. Used as an independent gate or cascaded into complex multi-level combinational trees.",
+      "function_bn": "গেট ৪ এর প্রথম ইনপুট টার্মিনাল। স্বাধীন গেট হিসেবে বা জটিল কম্বিনেশনাল সার্কিট তৈরিতে ব্যবহৃত হয়।",
+      "electrical": {
+        "logic_standard": "TTL 5V",
+        "input_high_vih": "≥ 2.0 V",
+        "input_low_vil": "≤ 0.8 V"
+      },
+      "syllabus_tags": ["Logic Inputs", "Gate 4"],
+      "course_context": "De Morgan's Theorem: Inverting input variables by tying 4A and 4B together into a NOT gate.",
+      "related_pins": ["Pin_4B_13", "Pin_4Y_11"],
+      "camera_target": [-0.6, 0.2, -0.9]
+    },
+    {
+      "id": "pin_4b_13",
+      "mesh_name": "Pin_4B_13",
+      "pin_number": 13,
+      "category": "logic_input",
+      "name_en": "4B (Pin 13) - Gate 4 Data Input B",
+      "name_bn": "4B (পিন ১৩) - গেট ৪ এর দ্বিতীয় ইনপুট",
+      "subtitle_en": "Second Input of Quad NAND Gate #4",
+      "subtitle_bn": "চতুর্থ ন্যান্ড গেটের দ্বিতীয় ইনপুট",
+      "function_en": "Data input terminal B for NAND Gate 4. When tied directly to Pin 12 (4A), the gate functions as a high-speed logic INVERTER (NOT gate).",
+      "function_bn": "গেট ৪ এর দ্বিতীয় ইনপুট টার্মিনাল। যখন পিন ১২ ও ১৩ একসাথে যুক্ত করা হয়, তখন এই গেটটি একটি আদর্শ নট (NOT) গেট বা ইনভার্টার হিসেবে কাজ করে।",
+      "electrical": {
+        "logic_standard": "TTL 5V",
+        "input_high_vih": "≥ 2.0 V",
+        "input_low_vil": "≤ 0.8 V"
+      },
+      "syllabus_tags": ["Logic Inputs", "Gate 4", "NAND as Inverter"],
+      "course_context": "DLD Viva Question: How do you configure a 2-input NAND gate to act as an inverter?",
+      "related_pins": ["Pin_4A_12", "Pin_4Y_11"],
+      "camera_target": [-1.1, 0.2, -0.9]
+    },
+    {
+      "id": "pin_vcc_14",
+      "mesh_name": "Pin_VCC_14",
+      "pin_number": 14,
+      "category": "power_supply",
+      "name_en": "VCC (Pin 14) - Positive Supply (+5V DC)",
+      "name_bn": "VCC (পিন ১৪) - পজিটিভ পাওয়ার সাপ্লাই (+৫ ভোল্ট)",
+      "subtitle_en": "Main Power Rail for Internal TTL Biasing",
+      "subtitle_bn": "আইসির অভ্যন্তরীণ ট্রানজিস্টর বায়াসিং পাওয়ার পিন",
+      "function_en": "Main positive DC power rail. Requires a regulated +5.0V supply (tolerance 4.75V to 5.25V). It is standard engineering practice to connect a 0.1µF ceramic decoupling capacitor between Pin 14 (VCC) and Pin 7 (GND) directly adjacent to the IC to suppress high-frequency TTL switching noise.",
+      "function_bn": "আইসির মূল পাওয়ার সাপ্লাই পিন (+৫ ভোল্ট)। এর ভোল্টেজ সীমা ৪.৭৫ থেকে ৫.২৫ ভোল্ট। হাই-ফ্রিকোয়েন্সি নয়েজ দূর করতে পিন ১৪ ও পিন ৭ এর মাঝে একটি ০.১ মাইক্রোফ্যারাড সিরামিক ডিকাপলিং ক্যাপাসিটর যুক্ত করা উত্তম ইঞ্জিনিয়ারিং প্র্যাকটিস।",
+      "electrical": {
+        "nominal_voltage": "+5.0 V DC",
+        "operating_range": "4.75 V to 5.25 V",
+        "supply_current_icc": "Typical 4.4 mA, Max 8.8 mA",
+        "absolute_max_voltage": "7.0 V DC"
+      },
+      "syllabus_tags": ["Power Supply", "Decoupling Capacitor", "TTL Ratings"],
+      "course_context": "EEE Circuit Design: The role of bypass/decoupling capacitors in TTL logic circuits.",
+      "related_pins": ["Pin_GND_7"],
+      "camera_target": [-1.6, 0.2, -0.9]
+    },
+    {
+      "id": "block_gate1",
+      "mesh_name": "Block_Gate1",
+      "category": "internal_architecture",
+      "name_en": "Internal Silicon Block: NAND Gate #1",
+      "name_bn": "অভ্যন্তরীণ সিলিকন ব্লক: ন্যান্ড গেট ১",
+      "subtitle_en": "Pins 1 (1A), 2 (1B) → Pin 3 (1Y)",
+      "subtitle_bn": "পিন ১ (1A), ২ (1B) → পিন ৩ (1Y)",
+      "function_en": "Schottky TTL quad-transistor cell on the silicon die implementing Y = ~(A · B). Features multi-emitter input transistor, phase-splitter transistor, and active pull-up totem pole driver.",
+      "function_bn": "সিলিকন ডাইয়ের অভ্যন্তরে অবস্থিত প্রথম ন্যান্ড গেট সেল। এতে মাল্টি-এমিটার ইনপুট ট্রানজিস্টর ও টোটেম-পোল আউটপুট ড্রাইভার রয়েছে।",
+      "electrical": {
+        "active_voltage": "Logic 1: ~3.4V | Logic 0: ~0.35V",
+        "switching_speed": "9 ns"
+      },
+      "syllabus_tags": ["Internal Die", "Multi-Emitter BJT", "Gate 1"],
+      "course_context": "Microelectronic Circuits: Silicon layout of TTL logic cells.",
+      "related_pins": ["Pin_1A_1", "Pin_1B_2", "Pin_1Y_3"],
+      "camera_target": [-1.1, 0.25, 0.4]
+    },
+    {
+      "id": "block_gate2",
+      "mesh_name": "Block_Gate2",
+      "category": "internal_architecture",
+      "name_en": "Internal Silicon Block: NAND Gate #2",
+      "name_bn": "অভ্যন্তরীণ সিলিকন ব্লক: ন্যান্ড গেট ২",
+      "subtitle_en": "Pins 4 (2A), 5 (2B) → Pin 6 (2Y)",
+      "subtitle_bn": "পিন ৪ (2A), ৫ (2B) → পিন ৬ (2Y)",
+      "function_en": "Second independent NAND gate cell. Can be cross-coupled with Gate #1 to construct a bistable SR latch memory cell.",
+      "function_bn": "দ্বিতীয় স্বাধীন ন্যান্ড গেট সেল। গেট ১ এর সাথে ক্রস-কাপল্ড করে একটি মেমরি সেল বা এস-আর ল্যাচ গঠন করা যায়।",
+      "electrical": {
+        "active_voltage": "Logic 1: ~3.4V | Logic 0: ~0.35V",
+        "switching_speed": "9 ns"
+      },
+      "syllabus_tags": ["Internal Die", "Gate 2", "SR Latch"],
+      "course_context": "DLD: Cross-coupled NAND latch memory.",
+      "related_pins": ["Pin_2A_4", "Pin_2B_5", "Pin_2Y_6"],
+      "camera_target": [0.4, 0.25, 0.4]
+    },
+    {
+      "id": "block_gate3",
+      "mesh_name": "Block_Gate3",
+      "category": "internal_architecture",
+      "name_en": "Internal Silicon Block: NAND Gate #3",
+      "name_bn": "অভ্যন্তরীণ সিলিকন ব্লক: ন্যান্ড গেট ৩",
+      "subtitle_en": "Pins 9 (3A), 10 (3B) → Pin 8 (3Y)",
+      "subtitle_bn": "পিন ৯ (3A), ১০ (3B) → পিন ৮ (3Y)",
+      "function_en": "Third independent NAND gate cell positioned on the upper quadrant of the micro-die.",
+      "function_bn": "সিলিকন ডাইয়ের ওপরের অংশে অবস্থিত তৃতীয় স্বাধীন ন্যান্ড গেট সেল।",
+      "electrical": {
+        "active_voltage": "Logic 1: ~3.4V | Logic 0: ~0.35V",
+        "switching_speed": "9 ns"
+      },
+      "syllabus_tags": ["Internal Die", "Gate 3"],
+      "course_context": "Digital Electronics: Integrated circuit packaging and layout.",
+      "related_pins": ["Pin_3A_9", "Pin_3B_10", "Pin_3Y_8"],
+      "camera_target": [0.7, 0.25, -0.4]
+    },
+    {
+      "id": "block_gate4",
+      "mesh_name": "Block_Gate4",
+      "category": "internal_architecture",
+      "name_en": "Internal Silicon Block: NAND Gate #4",
+      "name_bn": "অভ্যন্তরীণ সিলিকন ব্লক: ন্যান্ড গেট ৪",
+      "subtitle_en": "Pins 12 (4A), 13 (4B) → Pin 11 (4Y)",
+      "subtitle_bn": "পিন ১২ (4A), ১৩ (4B) → পিন ১১ (4Y)",
+      "function_en": "Fourth independent NAND gate cell completing the quad IC configuration.",
+      "function_bn": "চতুর্থ স্বাধীন ন্যান্ড গেট সেল যা কোয়াড কনফিগারেশন পূর্ণ করে।",
+      "electrical": {
+        "active_voltage": "Logic 1: ~3.4V | Logic 0: ~0.35V",
+        "switching_speed": "9 ns"
+      },
+      "syllabus_tags": ["Internal Die", "Gate 4"],
+      "course_context": "Digital Electronics: Universal logic gate implementation.",
+      "related_pins": ["Pin_4A_12", "Pin_4B_13", "Pin_4Y_11"],
+      "camera_target": [-0.8, 0.25, -0.4]
+    }
+  ]
+}
